@@ -1,0 +1,8 @@
+..........................................                               [100%]
+114 passed in 3.28s
+ ✓ src/api.test.ts (6 tests) 36ms
+ ✓ src/App.test.tsx (3 tests) 427ms
+ ✓ src/ReviewQueue.test.tsx (8 tests) 942ms
+   ✓ ReviewQueue tells loading, failed and empty apart > shows loading while the request is in flight 410ms
+ Test Files  3 passed (3)
+      Tests  17 passed (17)

@@ -1,0 +1,67 @@
+ Container onlyfan2-api-1 Running 
+ Container onlyfan2-postgres-1 Running 
+ Container onlyfan2-redis-1 Running 
+ Container onlyfan2-redis-1 Waiting 
+ Container onlyfan2-postgres-1 Waiting 
+ Container onlyfan2-redis-1 Healthy 
+ Container onlyfan2-postgres-1 Healthy 
+ Container onlyfan2-api-1 Waiting 
+ Container onlyfan2-api-1 Healthy 
+ Container onlyfan2-tests-run-0807bbac0f84 Creating 
+ Container onlyfan2-tests-run-0807bbac0f84 Created 
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-9.1.1, pluggy-1.7.0
+rootdir: /srv
+configfile: pyproject.toml
+plugins: anyio-4.15.1
+collected 44 items
+tests/integration/test_incident.py .......                               [ 15%]
+tests/integration/test_recovery.py ......                                [ 29%]
+tests/integration/test_rules.py ...............................          [100%]
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/integration/test_incident.py::test_provider_timeout_never_publishes_and_recovers_without_a_human
+PASSED tests/integration/test_incident.py::test_explicit_in_last_frames_of_a_video_is_blocked_in_unverified_workspace
+PASSED tests/integration/test_incident.py::test_long_async_video_every_frame_counts
+PASSED tests/integration/test_incident.py::test_generation_prompt_for_a_minor_is_refused_before_generation
+PASSED tests/integration/test_incident.py::test_slow_provider_redelivery_scores_once
+PASSED tests/integration/test_incident.py::test_media_held_during_outage_is_in_the_review_queue
+PASSED tests/integration/test_incident.py::test_duplicate_callback_is_applied_once
+PASSED tests/integration/test_recovery.py::test_500s_are_retried_with_a_limit_then_held_then_rescreened
+PASSED tests/integration/test_recovery.py::test_429_backs_off_and_is_not_held_for_long
+PASSED tests/integration/test_recovery.py::test_malformed_response_is_not_a_pass
+PASSED tests/integration/test_recovery.py::test_slow_but_within_timeout_is_fine
+PASSED tests/integration/test_recovery.py::test_admin_cannot_approve_unscreened_media
+PASSED tests/integration/test_recovery.py::test_worker_dies_after_provider_scored_before_result_saved
+PASSED tests/integration/test_rules.py::test_cross_workspace_media_is_404
+PASSED tests/integration/test_rules.py::test_review_queue_only_shows_own_workspace
+PASSED tests/integration/test_rules.py::test_headers_required_and_must_match
+PASSED tests/integration/test_rules.py::test_prohibited_is_blocked_in_every_workspace[member_v-minor]
+PASSED tests/integration/test_rules.py::test_prohibited_is_blocked_in_every_workspace[member_v-sexual_violence]
+PASSED tests/integration/test_rules.py::test_prohibited_is_blocked_in_every_workspace[member_v-bestiality]
+PASSED tests/integration/test_rules.py::test_prohibited_is_blocked_in_every_workspace[member_v-self_harm]
+PASSED tests/integration/test_rules.py::test_prohibited_is_blocked_in_every_workspace[member_v-real_person]
+PASSED tests/integration/test_rules.py::test_prohibited_is_blocked_in_every_workspace[member_u-minor]
+PASSED tests/integration/test_rules.py::test_prohibited_is_blocked_in_every_workspace[member_u-sexual_violence]
+PASSED tests/integration/test_rules.py::test_prohibited_is_blocked_in_every_workspace[member_u-bestiality]
+PASSED tests/integration/test_rules.py::test_prohibited_is_blocked_in_every_workspace[member_u-self_harm]
+PASSED tests/integration/test_rules.py::test_prohibited_is_blocked_in_every_workspace[member_u-real_person]
+PASSED tests/integration/test_rules.py::test_score_between_05_and_08_is_held_for_review
+PASSED tests/integration/test_rules.py::test_explicit_published_in_verified_blocked_in_unverified
+PASSED tests/integration/test_rules.py::test_brief_example_generation_is_screened
+PASSED tests/integration/test_rules.py::test_generated_output_is_screened_even_when_prompt_passes
+PASSED tests/integration/test_rules.py::test_other_prohibited_prompts_refused[sex with a dog]
+PASSED tests/integration/test_rules.py::test_other_prohibited_prompts_refused[incest roleplay]
+PASSED tests/integration/test_rules.py::test_other_prohibited_prompts_refused[trafficking victim]
+PASSED tests/integration/test_rules.py::test_other_prohibited_prompts_refused[taylor swift nude]
+PASSED tests/integration/test_rules.py::test_member_cannot_review_or_approve
+PASSED tests/integration/test_rules.py::test_admin_approve_and_reject
+PASSED tests/integration/test_rules.py::test_unsigned_or_badly_signed_callback_is_rejected
+PASSED tests/integration/test_rules.py::test_signed_callback_is_accepted
+PASSED tests/integration/test_rules.py::test_each_item_scored_once
+PASSED tests/integration/test_rules.py::test_invalid_media_rejected[item0]
+PASSED tests/integration/test_rules.py::test_invalid_media_rejected[item1]
+PASSED tests/integration/test_rules.py::test_invalid_media_rejected[item2]
+PASSED tests/integration/test_rules.py::test_invalid_media_rejected[item3]
+PASSED tests/integration/test_rules.py::test_invalid_media_rejected[item4]
+======================== 44 passed in 104.69s (0:01:44) ========================
