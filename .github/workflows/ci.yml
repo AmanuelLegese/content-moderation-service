@@ -1,0 +1,41 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  server-unit:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: server } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with: { python-version: "3.12" }
+      - run: uv sync --frozen
+      - run: uv run pytest tests/unit -q
+
+  ui:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: ui } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm, cache-dependency-path: ui/package-lock.json }
+      - run: npm ci
+      - run: npx tsc -b
+      - run: npm test
+      - run: npx vite build
+
+  integration:
+    # The whole stack under docker compose, tested over HTTP like an external checker.
+    runs-on: ubuntu-latest
+    needs: [server-unit]
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose up -d --build --wait --wait-timeout 180
+      - run: docker compose run --rm tests pytest tests/integration -q
+      - if: failure()
+        run: docker compose logs --no-color --tail 300
+      - if: always()
+        run: docker compose down -v
