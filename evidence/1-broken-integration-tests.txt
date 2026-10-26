@@ -1,0 +1,86 @@
+ Container onlyfan2-postgres-1 Running 
+ Container onlyfan2-redis-1 Running 
+ Container onlyfan2-api-1 Running 
+ Container onlyfan2-redis-1 Waiting 
+ Container onlyfan2-postgres-1 Waiting 
+ Container onlyfan2-redis-1 Healthy 
+ Container onlyfan2-postgres-1 Healthy 
+ Container onlyfan2-api-1 Waiting 
+ Container onlyfan2-api-1 Healthy 
+ Container onlyfan2-tests-run-cb80d2172b14 Creating 
+ Container onlyfan2-tests-run-cb80d2172b14 Created 
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-9.1.1, pluggy-1.7.0
+rootdir: /srv
+configfile: pyproject.toml
+plugins: anyio-4.15.1
+collected 44 items
+tests/integration/test_incident.py FFFFFFF                               [ 15%]
+tests/integration/test_recovery.py F.FFFF                                [ 29%]
+tests/integration/test_rules.py .................FFFF..........          [100%]
+=================================== FAILURES ===================================
+E   Failed: forbidden state reached: {'id': '77051cfc-c328-4c8f-a7fb-11aa4a48df24', 'status': 'published', 'reasons': [], 'workspace_id': 'ws_unverified', 'type': 'image', 'source': 'upload', 'frame_count': 1, 'hold_kind': None, 'explicit': False, 'screened': True, 'decided_by': None, 'created_at': '2026-10-26T20:20:25.484526+00:00', 'updated_at': '2026-10-26T20:20:30.518283+00:00'} (status history ['pending', 'published'])
+/srv/tests/integration/conftest.py:68: Failed: forbidden state reached: {'id': '77051cfc-c328-4c8f-a7fb-11aa4a48df24', 'status': 'published', 'reasons': [], 'workspace_id': 'ws_unverified', 'type': 'image', 'source': 'upload', 'frame_count': 1, 'hold_kind': None, 'explicit': False, 'screened': True, 'decided_by': None, 'created_at': '2026-10-26T20:20:25.484526+00:00', 'updated_at': '2026-10-26T20:20:30.518283+00:00'} (status history ['pending', 'published'])
+E   Failed: forbidden state reached: {'id': '09ce1a75-1171-431e-b1b8-a8322d648ec0', 'status': 'published', 'reasons': [], 'workspace_id': 'ws_unverified', 'type': 'video', 'source': 'upload', 'frame_count': 20, 'hold_kind': None, 'explicit': False, 'screened': True, 'decided_by': None, 'created_at': '2026-10-26T20:20:30.718033+00:00', 'updated_at': '2026-10-26T20:20:30.744429+00:00'} (status history ['pending', 'published'])
+/srv/tests/integration/conftest.py:68: Failed: forbidden state reached: {'id': '09ce1a75-1171-431e-b1b8-a8322d648ec0', 'status': 'published', 'reasons': [], 'workspace_id': 'ws_unverified', 'type': 'video', 'source': 'upload', 'frame_count': 20, 'hold_kind': None, 'explicit': False, 'screened': True, 'decided_by': None, 'created_at': '2026-10-26T20:20:30.718033+00:00', 'updated_at': '2026-10-26T20:20:30.744429+00:00'} (status history ['pending', 'published'])
+E   Failed: forbidden state reached: {'id': '6efdb325-41da-431a-99c5-c1778811fbc4', 'status': 'published', 'reasons': [], 'workspace_id': 'ws_unverified', 'type': 'video', 'source': 'upload', 'frame_count': 120, 'hold_kind': None, 'explicit': False, 'screened': True, 'decided_by': None, 'created_at': '2026-10-26T20:20:31.013331+00:00', 'updated_at': '2026-10-26T20:20:31.093163+00:00'} (status history ['pending', 'published'])
+/srv/tests/integration/conftest.py:68: Failed: forbidden state reached: {'id': '6efdb325-41da-431a-99c5-c1778811fbc4', 'status': 'published', 'reasons': [], 'workspace_id': 'ws_unverified', 'type': 'video', 'source': 'upload', 'frame_count': 120, 'hold_kind': None, 'explicit': False, 'screened': True, 'decided_by': None, 'created_at': '2026-10-26T20:20:31.013331+00:00', 'updated_at': '2026-10-26T20:20:31.093163+00:00'} (status history ['pending', 'published'])
+E   AssertionError: {"id":"0b1b3b33-87f3-401d-83c2-0a02a3e161d2","status":"pending"}
+    assert 202 == 422
+     +  where 202 = <Response [202 Accepted]>.status_code
+/srv/tests/integration/test_incident.py:62: AssertionError: {"id":"0b1b3b33-87f3-401d-83c2-0a02a3e161d2","status":"pending"}
+E   AssertionError: 3
+    assert 3 == 1
+     +  where 3 = calls('21ac7649-ce66-41b1-a9b0-d0978f7da158')
+/srv/tests/integration/test_incident.py:75: AssertionError: 3
+E   Failed: timed out after 20s waiting on 3112f2ed-1107-4e8f-9751-19b3522b76c8; status history ['pending']; last {'id': '3112f2ed-1107-4e8f-9751-19b3522b76c8', 'status': 'pending', 'reasons': [], 'workspace_id': 'ws_verified', 'type': 'image', 'source': 'upload', 'frame_count': 1, 'hold_kind': None, 'explicit': None, 'screened': False, 'decided_by': None, 'created_at': '2026-10-26T20:20:36.517019+00:00', 'updated_at': '2026-10-26T20:20:36.517019+00:00'}
+/srv/tests/integration/conftest.py:72: Failed: timed out after 20s waiting on 3112f2ed-1107-4e8f-9751-19b3522b76c8; status history ['pending']; last {'id': '3112f2ed-1107-4e8f-9751-19b3522b76c8', 'status': 'pending', 'reasons': [], 'workspace_id': 'ws_verified', 'type': 'image', 'source': 'upload', 'frame_count': 1, 'hold_kind': None, 'explicit': None, 'screened': False, 'decided_by': None, 'created_at': '2026-10-26T20:20:36.517019+00:00', 'updated_at': '2026-10-26T20:20:36.517019+00:00'}
+E   AssertionError: assert ('published' == 'held'
+      
+      - held
+      + published)
+/srv/tests/integration/test_incident.py:101: AssertionError: assert ('published' == 'held'
+E   Failed: timed out after 20s waiting on dd35b52b-c859-423e-89e7-40204b8fce77; status history ['pending']; last {'id': 'dd35b52b-c859-423e-89e7-40204b8fce77', 'status': 'pending', 'reasons': [], 'workspace_id': 'ws_unverified', 'type': 'image', 'source': 'upload', 'frame_count': 1, 'hold_kind': None, 'explicit': None, 'screened': False, 'decided_by': None, 'created_at': '2026-10-26T20:20:58.934363+00:00', 'updated_at': '2026-10-26T20:20:58.934363+00:00'}
+/srv/tests/integration/conftest.py:72: Failed: timed out after 20s waiting on dd35b52b-c859-423e-89e7-40204b8fce77; status history ['pending']; last {'id': 'dd35b52b-c859-423e-89e7-40204b8fce77', 'status': 'pending', 'reasons': [], 'workspace_id': 'ws_unverified', 'type': 'image', 'source': 'upload', 'frame_count': 1, 'hold_kind': None, 'explicit': None, 'screened': False, 'decided_by': None, 'created_at': '2026-10-26T20:20:58.934363+00:00', 'updated_at': '2026-10-26T20:20:58.934363+00:00'}
+E   Failed: timed out after 20s waiting on 69ac0764-1aa6-475f-a88c-0302d0c66fc3; status history ['pending']; last {'id': '69ac0764-1aa6-475f-a88c-0302d0c66fc3', 'status': 'pending', 'reasons': [], 'workspace_id': 'ws_unverified', 'type': 'image', 'source': 'upload', 'frame_count': 1, 'hold_kind': None, 'explicit': None, 'screened': False, 'decided_by': None, 'created_at': '2026-10-26T20:21:22.347899+00:00', 'updated_at': '2026-10-26T20:21:22.347899+00:00'}
+/srv/tests/integration/conftest.py:72: Failed: timed out after 20s waiting on 69ac0764-1aa6-475f-a88c-0302d0c66fc3; status history ['pending']; last {'id': '69ac0764-1aa6-475f-a88c-0302d0c66fc3', 'status': 'pending', 'reasons': [], 'workspace_id': 'ws_unverified', 'type': 'image', 'source': 'upload', 'frame_count': 1, 'hold_kind': None, 'explicit': None, 'screened': False, 'decided_by': None, 'created_at': '2026-10-26T20:21:22.347899+00:00', 'updated_at': '2026-10-26T20:21:22.347899+00:00'}
+E   AssertionError: assert 'published' == 'blocked'
+      
+      - blocked
+      + published
+/srv/tests/integration/test_recovery.py:57: AssertionError: assert 'published' == 'blocked'
+E   Failed: timed out after 20s waiting on 3e9735ec-3b9f-4952-8026-c1775ab9f532; status history ['pending']; last {'id': '3e9735ec-3b9f-4952-8026-c1775ab9f532', 'status': 'pending', 'reasons': [], 'workspace_id': 'ws_verified', 'type': 'image', 'source': 'upload', 'frame_count': 1, 'hold_kind': None, 'explicit': None, 'screened': False, 'decided_by': None, 'created_at': '2026-10-26T20:21:44.089695+00:00', 'updated_at': '2026-10-26T20:21:44.089695+00:00'}
+/srv/tests/integration/conftest.py:72: Failed: timed out after 20s waiting on 3e9735ec-3b9f-4952-8026-c1775ab9f532; status history ['pending']; last {'id': '3e9735ec-3b9f-4952-8026-c1775ab9f532', 'status': 'pending', 'reasons': [], 'workspace_id': 'ws_verified', 'type': 'image', 'source': 'upload', 'frame_count': 1, 'hold_kind': None, 'explicit': None, 'screened': False, 'decided_by': None, 'created_at': '2026-10-26T20:21:44.089695+00:00', 'updated_at': '2026-10-26T20:21:44.089695+00:00'}
+E   Failed: forbidden state reached: {'id': 'd04499cf-fefc-4464-8667-39f33d751348', 'status': 'published', 'reasons': [], 'workspace_id': 'ws_unverified', 'type': 'video', 'source': 'upload', 'frame_count': 12, 'hold_kind': None, 'explicit': False, 'screened': True, 'decided_by': None, 'created_at': '2026-10-26T20:22:04.206521+00:00', 'updated_at': '2026-10-26T20:22:04.241581+00:00'} (status history ['pending', 'published'])
+/srv/tests/integration/conftest.py:68: Failed: forbidden state reached: {'id': 'd04499cf-fefc-4464-8667-39f33d751348', 'status': 'published', 'reasons': [], 'workspace_id': 'ws_unverified', 'type': 'video', 'source': 'upload', 'frame_count': 12, 'hold_kind': None, 'explicit': False, 'screened': True, 'decided_by': None, 'created_at': '2026-10-26T20:22:04.206521+00:00', 'updated_at': '2026-10-26T20:22:04.241581+00:00'} (status history ['pending', 'published'])
+E   assert (202 == 422)
+     +  where 202 = <Response [202 Accepted]>.status_code
+/srv/tests/integration/test_rules.py:83: assert (202 == 422)
+E   assert (202 == 422)
+     +  where 202 = <Response [202 Accepted]>.status_code
+/srv/tests/integration/test_rules.py:83: assert (202 == 422)
+E   assert (202 == 422)
+     +  where 202 = <Response [202 Accepted]>.status_code
+/srv/tests/integration/test_rules.py:83: assert (202 == 422)
+E   assert (202 == 422)
+     +  where 202 = <Response [202 Accepted]>.status_code
+/srv/tests/integration/test_rules.py:83: assert (202 == 422)
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+FAILED tests/integration/test_incident.py::test_provider_timeout_never_publishes_and_recovers_without_a_human
+FAILED tests/integration/test_incident.py::test_explicit_in_last_frames_of_a_video_is_blocked_in_unverified_workspace
+FAILED tests/integration/test_incident.py::test_long_async_video_every_frame_counts
+FAILED tests/integration/test_incident.py::test_generation_prompt_for_a_minor_is_refused_before_generation
+FAILED tests/integration/test_incident.py::test_slow_provider_redelivery_scores_once
+FAILED tests/integration/test_incident.py::test_media_held_during_outage_is_in_the_review_queue
+FAILED tests/integration/test_incident.py::test_duplicate_callback_is_applied_once
+FAILED tests/integration/test_recovery.py::test_500s_are_retried_with_a_limit_then_held_then_rescreened
+FAILED tests/integration/test_recovery.py::test_malformed_response_is_not_a_pass
+FAILED tests/integration/test_recovery.py::test_slow_but_within_timeout_is_fine
+FAILED tests/integration/test_recovery.py::test_admin_cannot_approve_unscreened_media
+FAILED tests/integration/test_recovery.py::test_worker_dies_after_provider_scored_before_result_saved
+FAILED tests/integration/test_rules.py::test_other_prohibited_prompts_refused[sex with a dog]
+FAILED tests/integration/test_rules.py::test_other_prohibited_prompts_refused[incest roleplay]
+FAILED tests/integration/test_rules.py::test_other_prohibited_prompts_refused[trafficking victim]
+FAILED tests/integration/test_rules.py::test_other_prohibited_prompts_refused[taylor swift nude]
+================== 16 failed, 28 passed in 106.19s (0:01:46) ===================
