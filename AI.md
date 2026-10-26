@@ -26,7 +26,7 @@
 ## Not verified
 
 * **The prices and vendor capabilities in README part 3** are from memory, not current price sheets.
-* **The `integration` CI job has never run on GitHub.** The unit and UI jobs mirror commands that pass locally.
+* CI passed on GitHub (run 40399524792): the UI, unit and Docker Compose integration jobs. That's one run on a GitHub runner, not a check for flakiness over many runs.
 * **Prompt screening has only been tested against the evasion list in `tests/unit/test_prompts.py`,** not red-teamed.
 * **Behaviour with more than 2 worker replicas, Postgres or Redis outages, and sustained 429s at volume** is untested.
 * **The crash test covers one injected exit.** It doesn't cover partitions or hung workers; see the README.
