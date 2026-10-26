@@ -1,0 +1,5277 @@
+{
+ "label": "fixed",
+ "uploads": 279,
+ "media_published_unchecked": 0,
+ "unsafe_published_ever": 0,
+ "wrong_final_decision": 0,
+ "undecided_at_end": 0,
+ "provider_calls_total": 288,
+ "provider_calls_per_upload": 1.03,
+ "uploads_called_more_than_once": 8,
+ "max_oldest_waiting_job_s": 47.7,
+ "max_oldest_undecided_media_s": 47.7,
+ "ws_unverified_images_by_phase": {
+  "before": {
+   "images": 10,
+   "decided": 10,
+   "p50_decision_s": 1.6,
+   "max_decision_s": 2.3,
+   "p50_left_pending_s": 1.6
+  },
+  "during": {
+   "images": 39,
+   "decided": 39,
+   "p50_decision_s": 29.5,
+   "max_decision_s": 48.7,
+   "p50_left_pending_s": 0.9
+  },
+  "after": {
+   "images": 30,
+   "decided": 30,
+   "p50_decision_s": 0.3,
+   "max_decision_s": 9.3,
+   "p50_left_pending_s": 0.3
+  }
+ },
+ "final_metrics": {
+  "published_unchecked": 0,
+  "media_total": 279,
+  "pending": 0,
+  "held": 20,
+  "held_no_decision": 0,
+  "published": 188,
+  "blocked": 71,
+  "oldest_waiting_job_s": 0.0,
+  "oldest_undecided_media_s": 0.0,
+  "jobs": {
+   "done": 279
+  },
+  "breaker": "closed"
+ },
+ "samples": [
+  {
+   "t": 0.09,
+   "oldest_waiting_job_s": 0.019079,
+   "oldest_undecided_media_s": 0.019079,
+   "pending": 1,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 2.11,
+   "oldest_waiting_job_s": 0.297772,
+   "oldest_undecided_media_s": 0.254538,
+   "pending": 4,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 4.32,
+   "oldest_waiting_job_s": 0.67473,
+   "oldest_undecided_media_s": 0.67473,
+   "pending": 9,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 6.98,
+   "oldest_waiting_job_s": 0.546183,
+   "oldest_undecided_media_s": 0.546183,
+   "pending": 9,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 8.58,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 9.62,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 10.64,
+   "oldest_waiting_job_s": 0.209619,
+   "oldest_undecided_media_s": 0.209619,
+   "pending": 1,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 11.67,
+   "oldest_waiting_job_s": 1.236217,
+   "oldest_undecided_media_s": 1.236217,
+   "pending": 2,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 12.71,
+   "oldest_waiting_job_s": 2.27497,
+   "oldest_undecided_media_s": 2.27497,
+   "pending": 3,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 13.76,
+   "oldest_waiting_job_s": 3.323389,
+   "oldest_undecided_media_s": 3.323389,
+   "pending": 4,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 14.81,
+   "oldest_waiting_job_s": 4.375708,
+   "oldest_undecided_media_s": 4.375708,
+   "pending": 5,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 15.87,
+   "oldest_waiting_job_s": 5.431002,
+   "oldest_undecided_media_s": 5.431002,
+   "pending": 5,
+   "held_no_decision": 1,
+   "published_unchecked": 0
+  },
+  {
+   "t": 16.93,
+   "oldest_waiting_job_s": 6.496243,
+   "oldest_undecided_media_s": 6.496243,
+   "pending": 5,
+   "held_no_decision": 2,
+   "published_unchecked": 0
+  },
+  {
+   "t": 18.01,
+   "oldest_waiting_job_s": 7.569541,
+   "oldest_undecided_media_s": 7.569541,
+   "pending": 3,
+   "held_no_decision": 5,
+   "published_unchecked": 0
+  },
+  {
+   "t": 19.09,
+   "oldest_waiting_job_s": 8.653742,
+   "oldest_undecided_media_s": 8.653742,
+   "pending": 2,
+   "held_no_decision": 7,
+   "published_unchecked": 0
+  },
+  {
+   "t": 20.18,
+   "oldest_waiting_job_s": 9.750323,
+   "oldest_undecided_media_s": 9.750323,
+   "pending": 2,
+   "held_no_decision": 8,
+   "published_unchecked": 0
+  },
+  {
+   "t": 21.28,
+   "oldest_waiting_job_s": 10.849318,
+   "oldest_undecided_media_s": 10.849318,
+   "pending": 1,
+   "held_no_decision": 10,
+   "published_unchecked": 0
+  },
+  {
+   "t": 22.39,
+   "oldest_waiting_job_s": 11.953236,
+   "oldest_undecided_media_s": 11.953236,
+   "pending": 0,
+   "held_no_decision": 12,
+   "published_unchecked": 0
+  },
+  {
+   "t": 23.5,
+   "oldest_waiting_job_s": 13.064677,
+   "oldest_undecided_media_s": 13.064677,
+   "pending": 0,
+   "held_no_decision": 13,
+   "published_unchecked": 0
+  },
+  {
+   "t": 24.63,
+   "oldest_waiting_job_s": 14.200154,
+   "oldest_undecided_media_s": 14.200154,
+   "pending": 0,
+   "held_no_decision": 14,
+   "published_unchecked": 0
+  },
+  {
+   "t": 25.76,
+   "oldest_waiting_job_s": 15.329052,
+   "oldest_undecided_media_s": 15.329052,
+   "pending": 0,
+   "held_no_decision": 16,
+   "published_unchecked": 0
+  },
+  {
+   "t": 26.91,
+   "oldest_waiting_job_s": 16.474698,
+   "oldest_undecided_media_s": 16.474698,
+   "pending": 0,
+   "held_no_decision": 17,
+   "published_unchecked": 0
+  },
+  {
+   "t": 28.14,
+   "oldest_waiting_job_s": 17.696282,
+   "oldest_undecided_media_s": 17.696282,
+   "pending": 0,
+   "held_no_decision": 18,
+   "published_unchecked": 0
+  },
+  {
+   "t": 29.28,
+   "oldest_waiting_job_s": 18.850795,
+   "oldest_undecided_media_s": 18.850795,
+   "pending": 0,
+   "held_no_decision": 19,
+   "published_unchecked": 0
+  },
+  {
+   "t": 30.45,
+   "oldest_waiting_job_s": 20.020351,
+   "oldest_undecided_media_s": 20.020351,
+   "pending": 0,
+   "held_no_decision": 20,
+   "published_unchecked": 0
+  },
+  {
+   "t": 31.62,
+   "oldest_waiting_job_s": 21.181719,
+   "oldest_undecided_media_s": 21.181719,
+   "pending": 0,
+   "held_no_decision": 21,
+   "published_unchecked": 0
+  },
+  {
+   "t": 32.79,
+   "oldest_waiting_job_s": 22.359465,
+   "oldest_undecided_media_s": 22.359465,
+   "pending": 0,
+   "held_no_decision": 22,
+   "published_unchecked": 0
+  },
+  {
+   "t": 34.05,
+   "oldest_waiting_job_s": 23.617333,
+   "oldest_undecided_media_s": 23.617333,
+   "pending": 0,
+   "held_no_decision": 24,
+   "published_unchecked": 0
+  },
+  {
+   "t": 35.28,
+   "oldest_waiting_job_s": 24.847089,
+   "oldest_undecided_media_s": 24.847089,
+   "pending": 0,
+   "held_no_decision": 25,
+   "published_unchecked": 0
+  },
+  {
+   "t": 36.6,
+   "oldest_waiting_job_s": 26.16894,
+   "oldest_undecided_media_s": 26.16894,
+   "pending": 0,
+   "held_no_decision": 26,
+   "published_unchecked": 0
+  },
+  {
+   "t": 37.82,
+   "oldest_waiting_job_s": 27.387357,
+   "oldest_undecided_media_s": 27.387357,
+   "pending": 1,
+   "held_no_decision": 26,
+   "published_unchecked": 0
+  },
+  {
+   "t": 39.06,
+   "oldest_waiting_job_s": 28.629083,
+   "oldest_undecided_media_s": 28.629083,
+   "pending": 1,
+   "held_no_decision": 28,
+   "published_unchecked": 0
+  },
+  {
+   "t": 40.33,
+   "oldest_waiting_job_s": 29.900428,
+   "oldest_undecided_media_s": 29.900428,
+   "pending": 1,
+   "held_no_decision": 29,
+   "published_unchecked": 0
+  },
+  {
+   "t": 41.58,
+   "oldest_waiting_job_s": 31.15227,
+   "oldest_undecided_media_s": 31.15227,
+   "pending": 1,
+   "held_no_decision": 30,
+   "published_unchecked": 0
+  },
+  {
+   "t": 42.91,
+   "oldest_waiting_job_s": 32.46134,
+   "oldest_undecided_media_s": 32.46134,
+   "pending": 0,
+   "held_no_decision": 32,
+   "published_unchecked": 0
+  },
+  {
+   "t": 44.19,
+   "oldest_waiting_job_s": 33.758948,
+   "oldest_undecided_media_s": 33.758948,
+   "pending": 0,
+   "held_no_decision": 34,
+   "published_unchecked": 0
+  },
+  {
+   "t": 45.52,
+   "oldest_waiting_job_s": 35.083338,
+   "oldest_undecided_media_s": 35.083338,
+   "pending": 0,
+   "held_no_decision": 35,
+   "published_unchecked": 0
+  },
+  {
+   "t": 46.88,
+   "oldest_waiting_job_s": 36.452516,
+   "oldest_undecided_media_s": 36.452516,
+   "pending": 0,
+   "held_no_decision": 36,
+   "published_unchecked": 0
+  },
+  {
+   "t": 48.23,
+   "oldest_waiting_job_s": 37.792437,
+   "oldest_undecided_media_s": 37.792437,
+   "pending": 2,
+   "held_no_decision": 36,
+   "published_unchecked": 0
+  },
+  {
+   "t": 49.61,
+   "oldest_waiting_job_s": 39.172333,
+   "oldest_undecided_media_s": 39.172333,
+   "pending": 1,
+   "held_no_decision": 38,
+   "published_unchecked": 0
+  },
+  {
+   "t": 51.02,
+   "oldest_waiting_job_s": 40.567339,
+   "oldest_undecided_media_s": 40.567339,
+   "pending": 1,
+   "held_no_decision": 39,
+   "published_unchecked": 0
+  },
+  {
+   "t": 52.36,
+   "oldest_waiting_job_s": 41.925977,
+   "oldest_undecided_media_s": 41.925977,
+   "pending": 0,
+   "held_no_decision": 42,
+   "published_unchecked": 0
+  },
+  {
+   "t": 53.74,
+   "oldest_waiting_job_s": 43.298389,
+   "oldest_undecided_media_s": 43.298389,
+   "pending": 0,
+   "held_no_decision": 43,
+   "published_unchecked": 0
+  },
+  {
+   "t": 55.13,
+   "oldest_waiting_job_s": 44.691128,
+   "oldest_undecided_media_s": 44.691128,
+   "pending": 0,
+   "held_no_decision": 44,
+   "published_unchecked": 0
+  },
+  {
+   "t": 56.59,
+   "oldest_waiting_job_s": 46.157162,
+   "oldest_undecided_media_s": 46.157162,
+   "pending": 0,
+   "held_no_decision": 46,
+   "published_unchecked": 0
+  },
+  {
+   "t": 58.14,
+   "oldest_waiting_job_s": 47.688333,
+   "oldest_undecided_media_s": 47.688333,
+   "pending": 0,
+   "held_no_decision": 46,
+   "published_unchecked": 0
+  },
+  {
+   "t": 59.52,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 60.54,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 61.56,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 62.58,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 63.59,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 64.61,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 65.63,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 66.65,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 67.68,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 68.69,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 69.71,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 70.74,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 71.75,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 72.78,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 73.8,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 74.83,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 75.85,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 76.87,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 77.9,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 78.92,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  },
+  {
+   "t": 79.94,
+   "oldest_waiting_job_s": 0.0,
+   "oldest_undecided_media_s": 0.0,
+   "pending": 0,
+   "held_no_decision": 0,
+   "published_unchecked": 0
+  }
+ ],
+ "items": {
+  "b76911a9-9be2-4bac-a27b-d15e072a77aa": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 0.05,
+   "history": [
+    [
+     1.12,
+     "published"
+    ]
+   ],
+   "decided_at": 1.12,
+   "final": "published"
+  },
+  "e83959f8-807d-405f-9d9c-fd8d55340a27": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 0.13,
+   "history": [
+    [
+     1.15,
+     "published"
+    ]
+   ],
+   "decided_at": 1.15,
+   "final": "published"
+  },
+  "b56ea425-1bc1-4501-9d2e-511605583df2": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 0.14,
+   "history": [
+    [
+     1.18,
+     "published"
+    ]
+   ],
+   "decided_at": 1.18,
+   "final": "published"
+  },
+  "02e3f297-1800-4480-8e9c-83c736830457": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 0.17,
+   "history": [
+    [
+     1.2,
+     "published"
+    ]
+   ],
+   "decided_at": 1.2,
+   "final": "published"
+  },
+  "d4a5d287-263f-40a8-8bcd-9b2813760549": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "held",
+   "uploaded_at": 0.2,
+   "history": [
+    [
+     1.25,
+     "held"
+    ]
+   ],
+   "decided_at": 1.25,
+   "final": "held"
+  },
+  "5e50e11b-e6e6-44e7-8642-9037fbf8add1": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "held",
+   "uploaded_at": 0.23,
+   "history": [
+    [
+     1.3,
+     "held"
+    ]
+   ],
+   "decided_at": 1.3,
+   "final": "held"
+  },
+  "91aaf291-635c-4d47-a656-50cb847673b2": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "blocked",
+   "uploaded_at": 0.26,
+   "history": [
+    [
+     1.45,
+     "blocked"
+    ]
+   ],
+   "decided_at": 1.45,
+   "final": "blocked"
+  },
+  "bfc1482d-a8e5-4f73-8fb9-e905ddfc8fd9": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 0.29,
+   "history": [
+    [
+     1.48,
+     "published"
+    ]
+   ],
+   "decided_at": 1.48,
+   "final": "published"
+  },
+  "3ec8d82c-09c2-4644-94c2-50b121a0e6cd": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "blocked",
+   "uploaded_at": 0.3,
+   "history": [
+    [
+     1.52,
+     "blocked"
+    ]
+   ],
+   "decided_at": 1.52,
+   "final": "blocked"
+  },
+  "d7e45b25-ef82-4416-aee2-489a35d4a3bf": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "blocked",
+   "uploaded_at": 0.33,
+   "history": [
+    [
+     1.56,
+     "blocked"
+    ]
+   ],
+   "decided_at": 1.56,
+   "final": "blocked"
+  },
+  "fed88459-cd19-40fa-9cdd-bf3393dcf7f0": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "blocked",
+   "uploaded_at": 0.37,
+   "history": [
+    [
+     1.6,
+     "blocked"
+    ]
+   ],
+   "decided_at": 1.6,
+   "final": "blocked"
+  },
+  "9f3942c1-0953-4159-b255-85a432f6fad0": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 0.38,
+   "history": [
+    [
+     1.62,
+     "published"
+    ]
+   ],
+   "decided_at": 1.62,
+   "final": "published"
+  },
+  "fa445562-3c3a-47a5-8656-4abae3cb59d4": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "blocked",
+   "uploaded_at": 0.4,
+   "history": [
+    [
+     1.66,
+     "blocked"
+    ]
+   ],
+   "decided_at": 1.66,
+   "final": "blocked"
+  },
+  "df5b5c28-dcae-4072-a7db-37fa2dda408a": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "blocked",
+   "uploaded_at": 0.41,
+   "history": [
+    [
+     1.69,
+     "blocked"
+    ]
+   ],
+   "decided_at": 1.69,
+   "final": "blocked"
+  },
+  "d56f59e2-18f3-43e2-87e2-a7916a97f748": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 0.45,
+   "history": [
+    [
+     1.72,
+     "published"
+    ]
+   ],
+   "decided_at": 1.72,
+   "final": "published"
+  },
+  "4b88bdc4-0171-45db-a2c2-abc7ce3303c8": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 0.48,
+   "history": [
+    [
+     1.74,
+     "published"
+    ]
+   ],
+   "decided_at": 1.74,
+   "final": "published"
+  },
+  "b18b0af5-2593-466b-a92e-ce1e0020a756": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 0.52,
+   "history": [
+    [
+     1.79,
+     "published"
+    ]
+   ],
+   "decided_at": 1.79,
+   "final": "published"
+  },
+  "3f1730e4-eb47-42c6-bb0b-cfa323e2f70e": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "blocked",
+   "uploaded_at": 0.57,
+   "history": [
+    [
+     1.84,
+     "blocked"
+    ]
+   ],
+   "decided_at": 1.84,
+   "final": "blocked"
+  },
+  "fb4d290d-596f-4cd4-8cef-d738c832146e": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 0.6,
+   "history": [
+    [
+     1.86,
+     "published"
+    ]
+   ],
+   "decided_at": 1.86,
+   "final": "published"
+  },
+  "4cc9feee-c23c-4e75-a2a7-898093f0be2e": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 0.65,
+   "history": [
+    [
+     1.88,
+     "published"
+    ]
+   ],
+   "decided_at": 1.88,
+   "final": "published"
+  },
+  "8675f6d0-7e05-4faf-ad29-fc5b5ce4a80d": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "held",
+   "uploaded_at": 0.68,
+   "history": [
+    [
+     1.92,
+     "held"
+    ]
+   ],
+   "decided_at": 1.92,
+   "final": "held"
+  },
+  "7602011f-b832-4c86-90b7-c496ee341ee8": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 0.72,
+   "history": [
+    [
+     1.94,
+     "published"
+    ]
+   ],
+   "decided_at": 1.94,
+   "final": "published"
+  },
+  "264da156-44ff-4e76-ad81-cb91d7a3955e": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "blocked",
+   "uploaded_at": 0.96,
+   "history": [
+    [
+     1.98,
+     "blocked"
+    ]
+   ],
+   "decided_at": 1.98,
+   "final": "blocked"
+  },
+  "47f1cf0a-2759-43dd-ad6a-0ef984e4b041": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 1.12,
+   "history": [
+    [
+     3.13,
+     "published"
+    ]
+   ],
+   "decided_at": 3.13,
+   "final": "published"
+  },
+  "1ee7440a-d8bb-4f35-babd-1e851a9b761b": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 1.14,
+   "history": [
+    [
+     3.18,
+     "published"
+    ]
+   ],
+   "decided_at": 3.18,
+   "final": "published"
+  },
+  "7b6dadf1-408b-4d97-a633-27e60475f34b": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "held",
+   "uploaded_at": 1.21,
+   "history": [
+    [
+     3.2,
+     "held"
+    ]
+   ],
+   "decided_at": 3.2,
+   "final": "held"
+  },
+  "9f580129-54fd-49ce-b487-70658bdffaf8": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "held",
+   "uploaded_at": 1.27,
+   "history": [
+    [
+     3.21,
+     "held"
+    ]
+   ],
+   "decided_at": 3.21,
+   "final": "held"
+  },
+  "31d1a82f-86a8-45e6-9786-72c081dc2448": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 1.35,
+   "history": [
+    [
+     3.23,
+     "published"
+    ]
+   ],
+   "decided_at": 3.23,
+   "final": "published"
+  },
+  "de5bf6d4-4071-4c4a-b566-3ecc7b2e6b88": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 1.41,
+   "history": [
+    [
+     3.26,
+     "published"
+    ]
+   ],
+   "decided_at": 3.26,
+   "final": "published"
+  },
+  "36857dcb-20b0-47bb-9ffc-5b011bdffd89": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 1.45,
+   "history": [
+    [
+     3.29,
+     "published"
+    ]
+   ],
+   "decided_at": 3.29,
+   "final": "published"
+  },
+  "5ed2a23b-b9b5-45c0-b397-a8420a05f49e": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "blocked",
+   "uploaded_at": 1.47,
+   "history": [
+    [
+     3.34,
+     "blocked"
+    ]
+   ],
+   "decided_at": 3.34,
+   "final": "blocked"
+  },
+  "847d7a02-3571-414f-a221-ea90133c0216": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 1.5,
+   "history": [
+    [
+     3.35,
+     "published"
+    ]
+   ],
+   "decided_at": 3.35,
+   "final": "published"
+  },
+  "477a43f0-a403-45ba-b7c8-94e8999bab36": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 1.53,
+   "history": [
+    [
+     3.39,
+     "published"
+    ]
+   ],
+   "decided_at": 3.39,
+   "final": "published"
+  },
+  "a5aa705e-15d7-42c2-a044-4acc4d309231": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 1.57,
+   "history": [
+    [
+     3.41,
+     "published"
+    ]
+   ],
+   "decided_at": 3.41,
+   "final": "published"
+  },
+  "f846e05c-cf64-4179-b2b3-b4e9d710f7b5": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "blocked",
+   "uploaded_at": 1.6,
+   "history": [
+    [
+     3.43,
+     "blocked"
+    ]
+   ],
+   "decided_at": 3.43,
+   "final": "blocked"
+  },
+  "13b4533a-1ac6-47d8-9f9e-fd7cae156cb4": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 1.65,
+   "history": [
+    [
+     3.44,
+     "published"
+    ]
+   ],
+   "decided_at": 3.44,
+   "final": "published"
+  },
+  "0f11d114-eade-491f-9fcf-4b5ebd730c85": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 1.68,
+   "history": [
+    [
+     3.45,
+     "published"
+    ]
+   ],
+   "decided_at": 3.45,
+   "final": "published"
+  },
+  "36e147cd-a32c-4b81-8a76-2c2f6bb22e33": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "held",
+   "uploaded_at": 1.72,
+   "history": [
+    [
+     3.47,
+     "held"
+    ]
+   ],
+   "decided_at": 3.47,
+   "final": "held"
+  },
+  "803ce58f-8654-4d99-8040-f5d82a1725dc": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 1.78,
+   "history": [
+    [
+     3.51,
+     "published"
+    ]
+   ],
+   "decided_at": 3.51,
+   "final": "published"
+  },
+  "b41cf494-a2ef-408f-b30f-1aa937774dbb": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 1.87,
+   "history": [
+    [
+     3.53,
+     "published"
+    ]
+   ],
+   "decided_at": 3.53,
+   "final": "published"
+  },
+  "63441a1c-cde9-4fc1-8f4a-b535f89ee192": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 1.91,
+   "history": [
+    [
+     3.55,
+     "published"
+    ]
+   ],
+   "decided_at": 3.55,
+   "final": "published"
+  },
+  "9783de8f-5c6c-4a37-a8ca-2d96cf72b8b9": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 2.0,
+   "history": [
+    [
+     3.6,
+     "published"
+    ]
+   ],
+   "decided_at": 3.6,
+   "final": "published"
+  },
+  "27b6b9ce-f60c-4c0b-9c27-b93f952d4010": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 2.08,
+   "history": [
+    [
+     3.63,
+     "published"
+    ]
+   ],
+   "decided_at": 3.63,
+   "final": "published"
+  },
+  "b9166c1d-5130-43e5-b6eb-986f04f8828d": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 2.11,
+   "history": [
+    [
+     3.65,
+     "published"
+    ]
+   ],
+   "decided_at": 3.65,
+   "final": "published"
+  },
+  "766a263e-5848-428a-a9cc-421980c127ca": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 2.15,
+   "history": [
+    [
+     3.65,
+     "published"
+    ]
+   ],
+   "decided_at": 3.65,
+   "final": "published"
+  },
+  "cda1af17-8dbf-49b0-ab29-b2106519e6f8": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 2.17,
+   "history": [
+    [
+     3.7,
+     "blocked"
+    ]
+   ],
+   "decided_at": 3.7,
+   "final": "blocked"
+  },
+  "b703b361-61f4-4941-9ebc-8f59a4e14028": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 2.19,
+   "history": [
+    [
+     3.73,
+     "published"
+    ]
+   ],
+   "decided_at": 3.73,
+   "final": "published"
+  },
+  "554ab567-b67c-4c07-8e34-ddc40080bb11": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 2.25,
+   "history": [
+    [
+     3.76,
+     "published"
+    ]
+   ],
+   "decided_at": 3.76,
+   "final": "published"
+  },
+  "77fac169-ba29-4cb3-bf6b-66289d849a55": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 2.29,
+   "history": [
+    [
+     3.78,
+     "published"
+    ]
+   ],
+   "decided_at": 3.78,
+   "final": "published"
+  },
+  "5ca35a1c-2dd3-4ff6-93aa-e3943e4828c8": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "blocked",
+   "uploaded_at": 2.32,
+   "history": [
+    [
+     3.79,
+     "blocked"
+    ]
+   ],
+   "decided_at": 3.79,
+   "final": "blocked"
+  },
+  "2e8c2110-c4ea-4e1a-9e74-61c50c8f0a66": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "held",
+   "uploaded_at": 2.33,
+   "history": [
+    [
+     3.81,
+     "held"
+    ]
+   ],
+   "decided_at": 3.81,
+   "final": "held"
+  },
+  "4c2db078-c619-41d8-a9a5-b9e3be5fb36a": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 2.35,
+   "history": [
+    [
+     3.83,
+     "published"
+    ]
+   ],
+   "decided_at": 3.83,
+   "final": "published"
+  },
+  "9b734403-9160-471d-9cd0-5794739184bc": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 2.38,
+   "history": [
+    [
+     3.85,
+     "published"
+    ]
+   ],
+   "decided_at": 3.85,
+   "final": "published"
+  },
+  "07dbcc5f-9990-488e-9283-99d8cfe877b5": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 2.43,
+   "history": [
+    [
+     3.86,
+     "published"
+    ]
+   ],
+   "decided_at": 3.86,
+   "final": "published"
+  },
+  "695a0719-5aad-4b36-b269-052cb8a71f31": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 2.45,
+   "history": [
+    [
+     3.87,
+     "published"
+    ]
+   ],
+   "decided_at": 3.87,
+   "final": "published"
+  },
+  "61928c32-10cf-4f40-a414-11f221edd361": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 2.48,
+   "history": [
+    [
+     3.88,
+     "published"
+    ]
+   ],
+   "decided_at": 3.88,
+   "final": "published"
+  },
+  "4a37a0a0-e963-4d69-aad2-3efe8184bf19": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "held",
+   "uploaded_at": 2.51,
+   "history": [
+    [
+     3.9,
+     "held"
+    ]
+   ],
+   "decided_at": 3.9,
+   "final": "held"
+  },
+  "aa2f8abf-edb9-4903-816e-6dca74fca707": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 2.55,
+   "history": [
+    [
+     3.91,
+     "published"
+    ]
+   ],
+   "decided_at": 3.91,
+   "final": "published"
+  },
+  "7ca18ca3-29a7-494e-89ef-4cd8214bf188": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "blocked",
+   "uploaded_at": 2.57,
+   "history": [
+    [
+     3.92,
+     "blocked"
+    ]
+   ],
+   "decided_at": 3.92,
+   "final": "blocked"
+  },
+  "2b855497-b6f4-4cd9-a4fd-ff8211b17c18": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 2.6,
+   "history": [
+    [
+     3.94,
+     "published"
+    ]
+   ],
+   "decided_at": 3.94,
+   "final": "published"
+  },
+  "63ac5478-d455-47de-ae37-3213b88decee": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 2.67,
+   "history": [
+    [
+     3.94,
+     "published"
+    ]
+   ],
+   "decided_at": 3.94,
+   "final": "published"
+  },
+  "23cd53d9-22b6-4020-a673-ac7c95dde600": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 2.7,
+   "history": [
+    [
+     3.96,
+     "published"
+    ]
+   ],
+   "decided_at": 3.96,
+   "final": "published"
+  },
+  "1d29b2b9-f14a-45ff-87b2-d9c0a0bef753": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 2.74,
+   "history": [
+    [
+     4.01,
+     "published"
+    ]
+   ],
+   "decided_at": 4.01,
+   "final": "published"
+  },
+  "a2267d90-f07e-41d5-b67f-efdfcfcda73d": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 2.78,
+   "history": [
+    [
+     4.04,
+     "published"
+    ]
+   ],
+   "decided_at": 4.04,
+   "final": "published"
+  },
+  "830dd949-269f-4150-a37f-3771d2e99250": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "blocked",
+   "uploaded_at": 2.81,
+   "history": [
+    [
+     4.06,
+     "blocked"
+    ]
+   ],
+   "decided_at": 4.06,
+   "final": "blocked"
+  },
+  "a4cfde6a-d33b-409e-bdc6-14926d57b5a7": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "held",
+   "uploaded_at": 2.83,
+   "history": [
+    [
+     4.08,
+     "held"
+    ]
+   ],
+   "decided_at": 4.08,
+   "final": "held"
+  },
+  "670b9079-c93d-4fb5-ae56-b73a3ed60075": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 2.85,
+   "history": [
+    [
+     4.09,
+     "published"
+    ]
+   ],
+   "decided_at": 4.09,
+   "final": "published"
+  },
+  "9947b38f-93b0-4117-9f98-8dbed176c97f": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 2.87,
+   "history": [
+    [
+     4.1,
+     "published"
+    ]
+   ],
+   "decided_at": 4.1,
+   "final": "published"
+  },
+  "0696cc6d-afb9-489f-8d44-4d235f5d2107": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 2.9,
+   "history": [
+    [
+     4.12,
+     "published"
+    ]
+   ],
+   "decided_at": 4.12,
+   "final": "published"
+  },
+  "f59df7b0-7075-4ace-94af-d24a59423e5f": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 2.92,
+   "history": [
+    [
+     4.13,
+     "published"
+    ]
+   ],
+   "decided_at": 4.13,
+   "final": "published"
+  },
+  "869c161a-4138-42ce-bd9e-44a2f9599e30": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 2.94,
+   "history": [
+    [
+     4.14,
+     "published"
+    ]
+   ],
+   "decided_at": 4.14,
+   "final": "published"
+  },
+  "581c350d-e226-4ce9-808d-93ae833825f1": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "held",
+   "uploaded_at": 2.96,
+   "history": [
+    [
+     4.15,
+     "held"
+    ]
+   ],
+   "decided_at": 4.15,
+   "final": "held"
+  },
+  "c0b72697-c5b4-45c5-aba4-3a9875b3f346": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 2.98,
+   "history": [
+    [
+     4.17,
+     "published"
+    ]
+   ],
+   "decided_at": 4.17,
+   "final": "published"
+  },
+  "c61966b3-fbf1-4016-a950-4b39e6d2d473": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 3.0,
+   "history": [
+    [
+     4.18,
+     "published"
+    ]
+   ],
+   "decided_at": 4.18,
+   "final": "published"
+  },
+  "7617ee06-b0e6-4cd6-aee7-214f64f2c7db": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 3.02,
+   "history": [
+    [
+     4.19,
+     "published"
+    ]
+   ],
+   "decided_at": 4.19,
+   "final": "published"
+  },
+  "3596ae64-9c8c-407c-bd87-81280ae9e9f5": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 3.05,
+   "history": [
+    [
+     4.2,
+     "published"
+    ]
+   ],
+   "decided_at": 4.2,
+   "final": "published"
+  },
+  "3029fbad-db7a-466a-9dbb-812cf0a5ce6b": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 3.07,
+   "history": [
+    [
+     4.21,
+     "published"
+    ]
+   ],
+   "decided_at": 4.21,
+   "final": "published"
+  },
+  "9c272e95-47ea-4292-b2bb-229252b87baa": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 3.12,
+   "history": [
+    [
+     5.35,
+     "published"
+    ]
+   ],
+   "decided_at": 5.35,
+   "final": "published"
+  },
+  "490ff424-0e3f-48de-a647-f5fca37d9669": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 3.14,
+   "history": [
+    [
+     5.38,
+     "published"
+    ]
+   ],
+   "decided_at": 5.38,
+   "final": "published"
+  },
+  "d4c006f8-b024-4e23-8b02-4f4b962fce13": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 3.17,
+   "history": [
+    [
+     5.49,
+     "published"
+    ]
+   ],
+   "decided_at": 5.49,
+   "final": "published"
+  },
+  "d5649b97-df94-414e-9540-abd8b630da9b": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 3.2,
+   "history": [
+    [
+     5.5,
+     "published"
+    ]
+   ],
+   "decided_at": 5.5,
+   "final": "published"
+  },
+  "5d88cdc7-3dbf-49a3-8434-b8fa46ecbc0c": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 3.21,
+   "history": [
+    [
+     5.54,
+     "published"
+    ]
+   ],
+   "decided_at": 5.54,
+   "final": "published"
+  },
+  "9d50f1bb-2549-443f-a7ed-a1e9d90c0790": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 3.24,
+   "history": [
+    [
+     5.56,
+     "published"
+    ]
+   ],
+   "decided_at": 5.56,
+   "final": "published"
+  },
+  "71a61ee2-6253-4864-a40a-0d51ad9c0e50": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 3.3,
+   "history": [
+    [
+     5.58,
+     "published"
+    ]
+   ],
+   "decided_at": 5.58,
+   "final": "published"
+  },
+  "5743e169-93cc-4033-8520-79087cd1e9d4": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 3.36,
+   "history": [
+    [
+     5.6,
+     "published"
+    ]
+   ],
+   "decided_at": 5.6,
+   "final": "published"
+  },
+  "e7e287ce-4f5d-4b0b-94ec-1a2128b46d7a": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 3.39,
+   "history": [
+    [
+     5.61,
+     "published"
+    ]
+   ],
+   "decided_at": 5.61,
+   "final": "published"
+  },
+  "1af70023-5e21-44ea-ade2-da9353063fd1": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 3.4,
+   "history": [
+    [
+     5.64,
+     "published"
+    ]
+   ],
+   "decided_at": 5.64,
+   "final": "published"
+  },
+  "ccfb90ee-3ceb-4b38-9daa-37e9059cd10e": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 3.42,
+   "history": [
+    [
+     5.67,
+     "published"
+    ]
+   ],
+   "decided_at": 5.67,
+   "final": "published"
+  },
+  "c91d8ad9-4ef8-448d-98e8-e4d552e6c724": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "blocked",
+   "uploaded_at": 3.44,
+   "history": [
+    [
+     5.68,
+     "blocked"
+    ]
+   ],
+   "decided_at": 5.68,
+   "final": "blocked"
+  },
+  "8b17d1db-9910-44f8-8ed6-6dab4c1e1bbb": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 3.46,
+   "history": [
+    [
+     5.7,
+     "published"
+    ]
+   ],
+   "decided_at": 5.7,
+   "final": "published"
+  },
+  "ef161f96-f806-4f76-a18f-096ac7c13b29": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "held",
+   "uploaded_at": 3.53,
+   "history": [
+    [
+     5.77,
+     "held"
+    ]
+   ],
+   "decided_at": 5.77,
+   "final": "held"
+  },
+  "09a08fea-56cb-45ef-a27d-215ee66b5613": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 3.56,
+   "history": [
+    [
+     5.81,
+     "published"
+    ]
+   ],
+   "decided_at": 5.81,
+   "final": "published"
+  },
+  "c1901a28-6378-4018-9035-d49ab0dc8750": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 3.6,
+   "history": [
+    [
+     5.86,
+     "published"
+    ]
+   ],
+   "decided_at": 5.86,
+   "final": "published"
+  },
+  "fc9d8eee-2cb7-4156-a5fa-962949fa4743": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 3.66,
+   "history": [
+    [
+     5.89,
+     "published"
+    ]
+   ],
+   "decided_at": 5.89,
+   "final": "published"
+  },
+  "f467b940-5041-435a-926c-493fcfb2aae4": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 3.72,
+   "history": [
+    [
+     5.97,
+     "published"
+    ]
+   ],
+   "decided_at": 5.97,
+   "final": "published"
+  },
+  "80e9acaf-a43c-488c-8756-07d16d9df464": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 3.75,
+   "history": [
+    [
+     6.0,
+     "published"
+    ]
+   ],
+   "decided_at": 6.0,
+   "final": "published"
+  },
+  "f1ec2317-f3a0-4d74-bc40-e0e08deb86d6": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 3.79,
+   "history": [
+    [
+     6.05,
+     "published"
+    ]
+   ],
+   "decided_at": 6.05,
+   "final": "published"
+  },
+  "6954317c-d65d-4098-9d53-6fcdd69564e9": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 3.81,
+   "history": [
+    [
+     6.07,
+     "published"
+    ]
+   ],
+   "decided_at": 6.07,
+   "final": "published"
+  },
+  "218f4a90-1649-4e8b-beb9-4bfe58206d39": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "blocked",
+   "uploaded_at": 3.85,
+   "history": [
+    [
+     6.09,
+     "blocked"
+    ]
+   ],
+   "decided_at": 6.09,
+   "final": "blocked"
+  },
+  "f3cd1d3b-4c37-4981-8605-1fbc088d06bd": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 3.89,
+   "history": [
+    [
+     6.1,
+     "published"
+    ]
+   ],
+   "decided_at": 6.1,
+   "final": "published"
+  },
+  "fbd10ca9-e05d-44a4-becf-432406a65e94": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 3.91,
+   "history": [
+    [
+     6.11,
+     "published"
+    ]
+   ],
+   "decided_at": 6.11,
+   "final": "published"
+  },
+  "c805724d-e8a6-40c7-b26d-b7413c605e65": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 3.94,
+   "history": [
+    [
+     6.13,
+     "published"
+    ]
+   ],
+   "decided_at": 6.13,
+   "final": "published"
+  },
+  "b1b085fe-df5f-4b80-9360-ae770d48b320": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "blocked",
+   "uploaded_at": 3.96,
+   "history": [
+    [
+     6.14,
+     "blocked"
+    ]
+   ],
+   "decided_at": 6.14,
+   "final": "blocked"
+  },
+  "bcc067a5-4047-40bf-91e6-13905dda5b5d": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "blocked",
+   "uploaded_at": 4.03,
+   "history": [
+    [
+     6.16,
+     "blocked"
+    ]
+   ],
+   "decided_at": 6.16,
+   "final": "blocked"
+  },
+  "2487653d-ebe0-4e20-bdc7-6894c5776c86": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 4.07,
+   "history": [
+    [
+     6.17,
+     "published"
+    ]
+   ],
+   "decided_at": 6.17,
+   "final": "published"
+  },
+  "fb124bb8-6eb3-41ec-ae78-4b4ac0b0e116": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 4.11,
+   "history": [
+    [
+     6.19,
+     "published"
+    ]
+   ],
+   "decided_at": 6.19,
+   "final": "published"
+  },
+  "72941a42-9454-42ae-ac5c-369dd22bdba8": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 4.15,
+   "history": [
+    [
+     6.22,
+     "published"
+    ]
+   ],
+   "decided_at": 6.22,
+   "final": "published"
+  },
+  "276ff692-5d7a-48c3-ac0b-be3d9e776a7f": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 4.17,
+   "history": [
+    [
+     6.24,
+     "published"
+    ]
+   ],
+   "decided_at": 6.24,
+   "final": "published"
+  },
+  "daf98b4e-60a0-4e44-bcb9-8ed963863467": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 4.21,
+   "history": [
+    [
+     6.27,
+     "published"
+    ]
+   ],
+   "decided_at": 6.27,
+   "final": "published"
+  },
+  "305abb84-e316-4dae-94b0-eea11591451c": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 4.24,
+   "history": [
+    [
+     6.29,
+     "published"
+    ]
+   ],
+   "decided_at": 6.29,
+   "final": "published"
+  },
+  "0bdc128a-748c-49cb-b455-8bc0241bf875": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "blocked",
+   "uploaded_at": 4.26,
+   "history": [
+    [
+     6.32,
+     "blocked"
+    ]
+   ],
+   "decided_at": 6.32,
+   "final": "blocked"
+  },
+  "fed36503-9516-4d9f-b625-c0a94d0e09ec": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 4.31,
+   "history": [
+    [
+     6.36,
+     "published"
+    ]
+   ],
+   "decided_at": 6.36,
+   "final": "published"
+  },
+  "25ec0656-53ca-436a-9d48-58a80301f0ab": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "blocked",
+   "uploaded_at": 4.35,
+   "history": [
+    [
+     6.38,
+     "blocked"
+    ]
+   ],
+   "decided_at": 6.38,
+   "final": "blocked"
+  },
+  "244a9a75-c2c2-4df0-b20c-bb0a51c8326e": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "held",
+   "uploaded_at": 4.39,
+   "history": [
+    [
+     6.4,
+     "held"
+    ]
+   ],
+   "decided_at": 6.4,
+   "final": "held"
+  },
+  "35b022ef-9cbb-4969-97e9-ceccfe145dad": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 4.42,
+   "history": [
+    [
+     6.42,
+     "published"
+    ]
+   ],
+   "decided_at": 6.42,
+   "final": "published"
+  },
+  "836980c0-05ae-414e-be53-5abd237511e8": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 4.45,
+   "history": [
+    [
+     6.43,
+     "published"
+    ]
+   ],
+   "decided_at": 6.43,
+   "final": "published"
+  },
+  "58f0a46d-793e-4a42-a3cc-a44e7b312166": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 4.48,
+   "history": [
+    [
+     6.45,
+     "published"
+    ]
+   ],
+   "decided_at": 6.45,
+   "final": "published"
+  },
+  "c852b47e-9fa0-49bc-8133-03a3d76ac1d1": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 4.51,
+   "history": [
+    [
+     6.45,
+     "published"
+    ]
+   ],
+   "decided_at": 6.45,
+   "final": "published"
+  },
+  "e6a5e52d-5028-4066-a73c-5a10f7d34c83": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "blocked",
+   "uploaded_at": 4.56,
+   "history": [
+    [
+     6.48,
+     "blocked"
+    ]
+   ],
+   "decided_at": 6.48,
+   "final": "blocked"
+  },
+  "a19cf506-7fa3-4775-9761-34a9a75fd950": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 4.59,
+   "history": [
+    [
+     6.49,
+     "published"
+    ]
+   ],
+   "decided_at": 6.49,
+   "final": "published"
+  },
+  "1554fa9f-b427-409b-b631-04f6b9101125": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 4.62,
+   "history": [
+    [
+     6.51,
+     "published"
+    ]
+   ],
+   "decided_at": 6.51,
+   "final": "published"
+  },
+  "ad1a0259-e8e8-4fe7-92cc-0ad4d7d766ce": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 4.68,
+   "history": [
+    [
+     6.53,
+     "published"
+    ]
+   ],
+   "decided_at": 6.53,
+   "final": "published"
+  },
+  "6bae2fd9-6085-4c16-9ffc-b1cca35f3719": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 4.71,
+   "history": [
+    [
+     6.55,
+     "published"
+    ]
+   ],
+   "decided_at": 6.55,
+   "final": "published"
+  },
+  "dafdbe25-0fa4-4cb8-9469-923ef8588c42": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 4.73,
+   "history": [
+    [
+     6.57,
+     "published"
+    ]
+   ],
+   "decided_at": 6.57,
+   "final": "published"
+  },
+  "a6830564-36b9-4991-aee9-715c596f441a": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "held",
+   "uploaded_at": 4.75,
+   "history": [
+    [
+     6.61,
+     "held"
+    ]
+   ],
+   "decided_at": 6.61,
+   "final": "held"
+  },
+  "87a6afcd-a540-4e5f-a646-81dd708f06af": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 4.78,
+   "history": [
+    [
+     6.62,
+     "published"
+    ]
+   ],
+   "decided_at": 6.62,
+   "final": "published"
+  },
+  "4d8c6522-f6db-4e5a-bdf8-40e84d7ae8c0": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 4.8,
+   "history": [
+    [
+     6.64,
+     "published"
+    ]
+   ],
+   "decided_at": 6.64,
+   "final": "published"
+  },
+  "a7b55867-8df3-43f1-a3a4-85db76104e3d": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 4.83,
+   "history": [
+    [
+     6.65,
+     "published"
+    ]
+   ],
+   "decided_at": 6.65,
+   "final": "published"
+  },
+  "0dc0529f-98ec-4a1b-890a-2ecf3920f740": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 4.85,
+   "history": [
+    [
+     6.67,
+     "published"
+    ]
+   ],
+   "decided_at": 6.67,
+   "final": "published"
+  },
+  "0097ff99-2bcb-4c62-b49b-d922ce398095": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 4.87,
+   "history": [
+    [
+     6.68,
+     "published"
+    ]
+   ],
+   "decided_at": 6.68,
+   "final": "published"
+  },
+  "38fe4682-7f0e-4746-816a-f7ee55f78b81": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "blocked",
+   "uploaded_at": 4.91,
+   "history": [
+    [
+     6.72,
+     "blocked"
+    ]
+   ],
+   "decided_at": 6.72,
+   "final": "blocked"
+  },
+  "e3cb9ddc-0f10-4eaf-b756-e4b80d269a66": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 4.95,
+   "history": [
+    [
+     6.74,
+     "published"
+    ]
+   ],
+   "decided_at": 6.74,
+   "final": "published"
+  },
+  "e553ccd2-efcc-4187-858f-ea47b1736996": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 4.98,
+   "history": [
+    [
+     6.77,
+     "published"
+    ]
+   ],
+   "decided_at": 6.77,
+   "final": "published"
+  },
+  "d809e961-61e4-490e-810a-b1f958f6e7df": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "blocked",
+   "uploaded_at": 5.05,
+   "history": [
+    [
+     6.78,
+     "blocked"
+    ]
+   ],
+   "decided_at": 6.78,
+   "final": "blocked"
+  },
+  "9f2ed034-93af-456a-95b7-13c38d5cc8a8": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 5.08,
+   "history": [
+    [
+     6.79,
+     "published"
+    ]
+   ],
+   "decided_at": 6.79,
+   "final": "published"
+  },
+  "7363e46c-8a14-4c71-b382-061b22ccb565": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "blocked",
+   "uploaded_at": 5.11,
+   "history": [
+    [
+     6.8,
+     "blocked"
+    ]
+   ],
+   "decided_at": 6.8,
+   "final": "blocked"
+  },
+  "fff089c0-3b3d-487e-9f33-f910e3a39833": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 5.13,
+   "history": [
+    [
+     6.83,
+     "published"
+    ]
+   ],
+   "decided_at": 6.83,
+   "final": "published"
+  },
+  "26aaa6bb-92a9-463e-91aa-252fbf4021cd": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 5.16,
+   "history": [
+    [
+     6.85,
+     "published"
+    ]
+   ],
+   "decided_at": 6.85,
+   "final": "published"
+  },
+  "b942a6fe-5979-4693-acce-408d6b352375": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "blocked",
+   "uploaded_at": 5.2,
+   "history": [
+    [
+     6.86,
+     "blocked"
+    ]
+   ],
+   "decided_at": 6.86,
+   "final": "blocked"
+  },
+  "8c192193-9bb8-4d8f-bf64-8c70c5153806": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 5.22,
+   "history": [
+    [
+     6.87,
+     "published"
+    ]
+   ],
+   "decided_at": 6.87,
+   "final": "published"
+  },
+  "8f4bd8c7-baf5-4b53-9e88-d595e902e45f": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 5.25,
+   "history": [
+    [
+     6.88,
+     "published"
+    ]
+   ],
+   "decided_at": 6.88,
+   "final": "published"
+  },
+  "63cfc84a-f22e-4ee7-84db-090d4ef03b37": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 5.27,
+   "history": [
+    [
+     6.89,
+     "blocked"
+    ]
+   ],
+   "decided_at": 6.89,
+   "final": "blocked"
+  },
+  "572f37b2-7dbc-436c-9669-ec727c92b01f": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 5.28,
+   "history": [
+    [
+     6.91,
+     "published"
+    ]
+   ],
+   "decided_at": 6.91,
+   "final": "published"
+  },
+  "59493f4c-b2ed-4dea-bf86-fb809ae87189": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 5.31,
+   "history": [
+    [
+     6.92,
+     "published"
+    ]
+   ],
+   "decided_at": 6.92,
+   "final": "published"
+  },
+  "c5d33807-4c8d-4929-8e6a-71127aaf361d": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "held",
+   "uploaded_at": 5.35,
+   "history": [
+    [
+     8.0,
+     "held"
+    ]
+   ],
+   "decided_at": 8.0,
+   "final": "held"
+  },
+  "ee996874-a799-483c-a41e-575faa424184": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 5.4,
+   "history": [
+    [
+     8.02,
+     "published"
+    ]
+   ],
+   "decided_at": 8.02,
+   "final": "published"
+  },
+  "aa703195-c10b-4081-b764-3456d1bd60ff": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 5.46,
+   "history": [
+    [
+     8.03,
+     "published"
+    ]
+   ],
+   "decided_at": 8.03,
+   "final": "published"
+  },
+  "60317676-8605-48ff-affa-b802715bec02": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 5.51,
+   "history": [
+    [
+     8.04,
+     "published"
+    ]
+   ],
+   "decided_at": 8.04,
+   "final": "published"
+  },
+  "15210196-627e-4d66-8540-83eea08b69db": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 5.56,
+   "history": [
+    [
+     8.04,
+     "published"
+    ]
+   ],
+   "decided_at": 8.04,
+   "final": "published"
+  },
+  "1afbc4b1-0a7e-4ea3-9ba2-9d79386c2904": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 5.61,
+   "history": [
+    [
+     8.05,
+     "published"
+    ]
+   ],
+   "decided_at": 8.05,
+   "final": "published"
+  },
+  "09162c37-7ed5-4f49-b1bd-5822c23d553a": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 5.64,
+   "history": [
+    [
+     8.06,
+     "published"
+    ]
+   ],
+   "decided_at": 8.06,
+   "final": "published"
+  },
+  "3a1c7c55-2037-4fbe-b1ae-2f6c5840627c": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 5.73,
+   "history": [
+    [
+     8.06,
+     "published"
+    ]
+   ],
+   "decided_at": 8.06,
+   "final": "published"
+  },
+  "9b263aaa-adac-4fe0-aef1-576423db7014": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 5.87,
+   "history": [
+    [
+     8.07,
+     "published"
+    ]
+   ],
+   "decided_at": 8.07,
+   "final": "published"
+  },
+  "81c3837a-f5ea-408d-af41-27a56a034aef": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 5.91,
+   "history": [
+    [
+     8.08,
+     "published"
+    ]
+   ],
+   "decided_at": 8.08,
+   "final": "published"
+  },
+  "f2239e8e-4b69-45f6-999a-047e19114a7f": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "held",
+   "uploaded_at": 5.96,
+   "history": [
+    [
+     8.09,
+     "held"
+    ]
+   ],
+   "decided_at": 8.09,
+   "final": "held"
+  },
+  "1c2fb87a-3a3b-4d30-8e8e-797da6837fe2": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 6.03,
+   "history": [
+    [
+     8.1,
+     "published"
+    ]
+   ],
+   "decided_at": 8.1,
+   "final": "published"
+  },
+  "5028b678-afc1-4b99-b3cb-705996657b61": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 6.09,
+   "history": [
+    [
+     8.12,
+     "published"
+    ]
+   ],
+   "decided_at": 8.12,
+   "final": "published"
+  },
+  "5aae3286-9b7f-4d32-8bef-bbbda48b2d7b": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 6.12,
+   "history": [
+    [
+     8.13,
+     "published"
+    ]
+   ],
+   "decided_at": 8.13,
+   "final": "published"
+  },
+  "4e96d278-c816-4fe8-b619-827241f56e91": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 6.14,
+   "history": [
+    [
+     8.14,
+     "published"
+    ]
+   ],
+   "decided_at": 8.14,
+   "final": "published"
+  },
+  "716088ea-3140-492f-b6e6-0db3135a2166": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 6.17,
+   "history": [
+    [
+     8.15,
+     "published"
+    ]
+   ],
+   "decided_at": 8.15,
+   "final": "published"
+  },
+  "5e6a3726-ca1d-44fc-bde4-60d489ea3601": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "blocked",
+   "uploaded_at": 6.19,
+   "history": [
+    [
+     8.16,
+     "blocked"
+    ]
+   ],
+   "decided_at": 8.16,
+   "final": "blocked"
+  },
+  "84f52df9-4061-4413-881a-5f5b5159a838": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 6.23,
+   "history": [
+    [
+     8.17,
+     "published"
+    ]
+   ],
+   "decided_at": 8.17,
+   "final": "published"
+  },
+  "6a7374a3-f2b0-4af3-ba55-f6e76a5dfdc6": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 6.3,
+   "history": [
+    [
+     8.18,
+     "published"
+    ]
+   ],
+   "decided_at": 8.18,
+   "final": "published"
+  },
+  "681b37a0-0680-48b0-8330-79496313013f": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 6.32,
+   "history": [
+    [
+     8.19,
+     "published"
+    ]
+   ],
+   "decided_at": 8.19,
+   "final": "published"
+  },
+  "3fabf9fc-ecfc-404f-9796-47c932289bce": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 6.34,
+   "history": [
+    [
+     8.2,
+     "published"
+    ]
+   ],
+   "decided_at": 8.2,
+   "final": "published"
+  },
+  "43d9f42e-50cd-4071-b38d-297ee8441162": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "blocked",
+   "uploaded_at": 6.41,
+   "history": [
+    [
+     8.21,
+     "blocked"
+    ]
+   ],
+   "decided_at": 8.21,
+   "final": "blocked"
+  },
+  "917f4a46-70bf-471b-954d-34f35011cac0": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "held",
+   "uploaded_at": 6.43,
+   "history": [
+    [
+     8.21,
+     "held"
+    ]
+   ],
+   "decided_at": 8.21,
+   "final": "held"
+  },
+  "ac12fd4f-6090-4a4f-aadd-afaff0cdd14c": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 6.49,
+   "history": [
+    [
+     8.22,
+     "published"
+    ]
+   ],
+   "decided_at": 8.22,
+   "final": "published"
+  },
+  "00e7afec-d1a5-4490-a71e-937454e1a8bb": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 6.51,
+   "history": [
+    [
+     8.24,
+     "published"
+    ]
+   ],
+   "decided_at": 8.24,
+   "final": "published"
+  },
+  "c575a8f6-402f-4b43-a01d-2e848e599b62": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "held",
+   "uploaded_at": 6.56,
+   "history": [
+    [
+     8.25,
+     "held"
+    ]
+   ],
+   "decided_at": 8.25,
+   "final": "held"
+  },
+  "0a38fa8c-8d6d-48b6-8e7c-28a5f87463fb": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 6.62,
+   "history": [
+    [
+     8.26,
+     "published"
+    ]
+   ],
+   "decided_at": 8.26,
+   "final": "published"
+  },
+  "2ca00914-7ffd-4a6f-84b3-e2c8d4c50381": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 6.64,
+   "history": [
+    [
+     8.27,
+     "published"
+    ]
+   ],
+   "decided_at": 8.27,
+   "final": "published"
+  },
+  "59542190-d858-4d58-817a-2c4932263299": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 6.69,
+   "history": [
+    [
+     8.27,
+     "published"
+    ]
+   ],
+   "decided_at": 8.27,
+   "final": "published"
+  },
+  "c46b9230-92f8-4753-be92-bd0419ed6df8": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "held",
+   "uploaded_at": 6.75,
+   "history": [
+    [
+     8.28,
+     "held"
+    ]
+   ],
+   "decided_at": 8.28,
+   "final": "held"
+  },
+  "4678ac4c-f044-49f1-aac2-83c8b18a7e09": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 6.79,
+   "history": [
+    [
+     8.29,
+     "published"
+    ]
+   ],
+   "decided_at": 8.29,
+   "final": "published"
+  },
+  "84ee8e58-c01a-4231-962b-9c64fded88a6": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "blocked",
+   "uploaded_at": 6.84,
+   "history": [
+    [
+     8.3,
+     "blocked"
+    ]
+   ],
+   "decided_at": 8.3,
+   "final": "blocked"
+  },
+  "ed8e6c55-beae-4b10-8680-8ccc13571d01": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 6.89,
+   "history": [
+    [
+     8.3,
+     "published"
+    ]
+   ],
+   "decided_at": 8.3,
+   "final": "published"
+  },
+  "d925c364-282e-410c-9629-6c992f7af28d": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 6.91,
+   "history": [
+    [
+     8.31,
+     "published"
+    ]
+   ],
+   "decided_at": 8.31,
+   "final": "published"
+  },
+  "f1e7fa77-8031-4b29-98dd-08665bbc7414": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 6.94,
+   "history": [
+    [
+     8.32,
+     "published"
+    ]
+   ],
+   "decided_at": 8.32,
+   "final": "published"
+  },
+  "abdffce0-6f58-4f71-8c35-caebda3e2942": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 6.96,
+   "history": [
+    [
+     8.33,
+     "published"
+    ]
+   ],
+   "decided_at": 8.33,
+   "final": "published"
+  },
+  "34d695b7-b2c4-4677-b456-8355f67dd489": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "blocked",
+   "uploaded_at": 6.99,
+   "history": [
+    [
+     8.34,
+     "blocked"
+    ]
+   ],
+   "decided_at": 8.34,
+   "final": "blocked"
+  },
+  "8ee8121a-43d8-430e-a021-f3813638834a": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "held",
+   "uploaded_at": 7.02,
+   "history": [
+    [
+     8.35,
+     "held"
+    ]
+   ],
+   "decided_at": 8.35,
+   "final": "held"
+  },
+  "c95e06aa-4cb2-47e9-bce7-57fb39afa56a": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 7.05,
+   "history": [
+    [
+     8.36,
+     "published"
+    ]
+   ],
+   "decided_at": 8.36,
+   "final": "published"
+  },
+  "4b80bf35-182f-447e-bc89-6f2a0ceada60": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 7.09,
+   "history": [
+    [
+     8.37,
+     "published"
+    ]
+   ],
+   "decided_at": 8.37,
+   "final": "published"
+  },
+  "bd33baf4-925c-4d50-a192-41147dee5669": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 7.11,
+   "history": [
+    [
+     8.38,
+     "published"
+    ]
+   ],
+   "decided_at": 8.38,
+   "final": "published"
+  },
+  "191d56e8-0f45-498e-bbeb-f9f0f248348c": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 7.13,
+   "history": [
+    [
+     8.39,
+     "published"
+    ]
+   ],
+   "decided_at": 8.39,
+   "final": "published"
+  },
+  "fad5cd15-263a-4438-8a89-9d126c5964c8": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 7.15,
+   "history": [
+    [
+     8.4,
+     "published"
+    ]
+   ],
+   "decided_at": 8.4,
+   "final": "published"
+  },
+  "6fbdaca3-47ec-495f-8759-950777b50126": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 7.18,
+   "history": [
+    [
+     8.41,
+     "published"
+    ]
+   ],
+   "decided_at": 8.41,
+   "final": "published"
+  },
+  "54da6773-7b0e-4003-9942-cd365e24f802": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 7.2,
+   "history": [
+    [
+     8.42,
+     "published"
+    ]
+   ],
+   "decided_at": 8.42,
+   "final": "published"
+  },
+  "99c90a1e-536f-4563-8df9-bdec2325fa71": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 7.23,
+   "history": [
+    [
+     8.42,
+     "published"
+    ]
+   ],
+   "decided_at": 8.42,
+   "final": "published"
+  },
+  "8be0106e-7e04-4824-b877-2fcc1d588eea": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "held",
+   "uploaded_at": 7.26,
+   "history": [
+    [
+     8.43,
+     "held"
+    ]
+   ],
+   "decided_at": 8.43,
+   "final": "held"
+  },
+  "225a868f-1232-4f1e-ae50-3a766f4f43a1": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 7.29,
+   "history": [
+    [
+     8.44,
+     "published"
+    ]
+   ],
+   "decided_at": 8.44,
+   "final": "published"
+  },
+  "8b0808ab-84c4-4102-a73c-201d14797e85": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 7.33,
+   "history": [
+    [
+     8.44,
+     "published"
+    ]
+   ],
+   "decided_at": 8.44,
+   "final": "published"
+  },
+  "44ca3729-f722-48b4-86c1-6a803c790fb9": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 7.37,
+   "history": [
+    [
+     8.45,
+     "blocked"
+    ]
+   ],
+   "decided_at": 8.45,
+   "final": "blocked"
+  },
+  "7f9297c1-3896-4706-a704-0dcadfbbddd8": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 7.37,
+   "history": [
+    [
+     8.45,
+     "published"
+    ]
+   ],
+   "decided_at": 8.45,
+   "final": "published"
+  },
+  "f91d4b02-c3b2-4a52-9371-6df539f94338": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 7.4,
+   "history": [
+    [
+     8.47,
+     "published"
+    ]
+   ],
+   "decided_at": 8.47,
+   "final": "published"
+  },
+  "b77f7d16-d712-471f-8f12-22a33469e86e": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 7.43,
+   "history": [
+    [
+     8.47,
+     "published"
+    ]
+   ],
+   "decided_at": 8.48,
+   "final": "published"
+  },
+  "45b7065e-fa8a-4bcf-addf-57c8cd0634d8": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 7.46,
+   "history": [
+    [
+     8.48,
+     "published"
+    ]
+   ],
+   "decided_at": 8.48,
+   "final": "published"
+  },
+  "59fb5eb5-e764-4de8-b40e-17e83e3906ed": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "blocked",
+   "uploaded_at": 7.49,
+   "history": [
+    [
+     8.49,
+     "blocked"
+    ]
+   ],
+   "decided_at": 8.49,
+   "final": "blocked"
+  },
+  "ec1f67f8-305a-4f0f-9ea1-9f8bb3f79ad8": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 7.51,
+   "history": [
+    [
+     8.5,
+     "published"
+    ]
+   ],
+   "decided_at": 8.5,
+   "final": "published"
+  },
+  "d911f6fc-0674-40d8-b48b-35073449ae3c": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 7.54,
+   "history": [
+    [
+     8.5,
+     "published"
+    ]
+   ],
+   "decided_at": 8.5,
+   "final": "published"
+  },
+  "609d62f4-bf19-434a-b7d2-9c3e00e507de": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 7.57,
+   "history": [
+    [
+     8.51,
+     "published"
+    ]
+   ],
+   "decided_at": 8.51,
+   "final": "published"
+  },
+  "088185c3-a45e-44f8-bef8-fc7fdf8f9876": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 25,
+   "expected": "published",
+   "uploaded_at": 7.59,
+   "history": [
+    [
+     8.52,
+     "published"
+    ]
+   ],
+   "decided_at": 8.52,
+   "final": "published"
+  },
+  "2c2405a1-6601-4178-94cd-31fbb8e8601b": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 60,
+   "expected": "published",
+   "uploaded_at": 7.6,
+   "history": [
+    [
+     8.52,
+     "published"
+    ]
+   ],
+   "decided_at": 8.52,
+   "final": "published"
+  },
+  "e8233b54-d96f-4816-bc1b-9993018c4229": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 7.61,
+   "history": [
+    [
+     8.53,
+     "published"
+    ]
+   ],
+   "decided_at": 8.53,
+   "final": "published"
+  },
+  "84d25dd5-8095-4d4f-87ae-d1a1e3bdcdeb": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 40,
+   "expected": "published",
+   "uploaded_at": 7.64,
+   "history": [
+    [
+     8.54,
+     "published"
+    ]
+   ],
+   "decided_at": 8.54,
+   "final": "published"
+  },
+  "11594d20-2528-494c-b958-fe6b5953232f": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 20,
+   "expected": "published",
+   "uploaded_at": 7.66,
+   "history": [
+    [
+     8.55,
+     "published"
+    ]
+   ],
+   "decided_at": 8.55,
+   "final": "published"
+  },
+  "33144a05-bff0-444f-9f9b-27fd8ea63964": {
+   "ws": "ws_verified",
+   "type": "video",
+   "frames": 10,
+   "expected": "published",
+   "uploaded_at": 7.69,
+   "history": [
+    [
+     8.56,
+     "published"
+    ]
+   ],
+   "decided_at": 8.56,
+   "final": "published"
+  },
+  "4d734202-3123-4378-9cf5-944262090591": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 8.4,
+   "history": [
+    [
+     9.6,
+     "published"
+    ]
+   ],
+   "decided_at": 9.6,
+   "final": "published"
+  },
+  "b479fb07-d7b6-4eca-b8b3-2296db3d4957": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 9.42,
+   "history": [
+    [
+     9.6,
+     "blocked"
+    ]
+   ],
+   "decided_at": 9.6,
+   "final": "blocked"
+  },
+  "7a84d2db-bcd0-47c1-b1a9-cc087ffc760a": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 10.43,
+   "history": [
+    [
+     10.63,
+     "pending"
+    ],
+    [
+     15.81,
+     "held"
+    ],
+    [
+     59.15,
+     "published"
+    ]
+   ],
+   "decided_at": 59.15,
+   "final": "published"
+  },
+  "139ee3bb-cb8c-434c-a7ee-8a5406226219": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 11.45,
+   "history": [
+    [
+     11.66,
+     "pending"
+    ],
+    [
+     16.88,
+     "held"
+    ],
+    [
+     59.16,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.16,
+   "final": "blocked"
+  },
+  "67185d60-cdba-4098-85f1-97009e324b75": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 12.47,
+   "history": [
+    [
+     12.69,
+     "pending"
+    ],
+    [
+     17.95,
+     "held"
+    ],
+    [
+     59.17,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.17,
+   "final": "blocked"
+  },
+  "483d84de-61fc-4ea1-bce6-fde7d363de22": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 13.49,
+   "history": [
+    [
+     13.74,
+     "pending"
+    ],
+    [
+     19.04,
+     "held"
+    ],
+    [
+     59.17,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.17,
+   "final": "blocked"
+  },
+  "27649833-a2ff-4607-8fe9-2f47b74a7fc1": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 14.51,
+   "history": [
+    [
+     14.8,
+     "pending"
+    ],
+    [
+     21.23,
+     "held"
+    ],
+    [
+     59.18,
+     "published"
+    ]
+   ],
+   "decided_at": 59.18,
+   "final": "published"
+  },
+  "5daaf8a7-57ae-4e48-8b07-3bc3bb05c65e": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 15.52,
+   "history": [
+    [
+     15.85,
+     "pending"
+    ],
+    [
+     22.33,
+     "held"
+    ],
+    [
+     59.19,
+     "published"
+    ]
+   ],
+   "decided_at": 59.19,
+   "final": "published"
+  },
+  "21c59859-b6ac-43a6-b1f0-ec2af5c70aef": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 16.54,
+   "history": [
+    [
+     16.91,
+     "pending"
+    ],
+    [
+     17.98,
+     "held"
+    ],
+    [
+     59.2,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.2,
+   "final": "blocked"
+  },
+  "967f148e-874e-4da4-a0d6-b2923de2cae0": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 17.56,
+   "history": [
+    [
+     17.99,
+     "held"
+    ],
+    [
+     59.21,
+     "published"
+    ]
+   ],
+   "decided_at": 59.21,
+   "final": "published"
+  },
+  "df732719-2a2f-42f5-9e90-ba5bec617416": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 18.57,
+   "history": [
+    [
+     19.07,
+     "held"
+    ],
+    [
+     59.21,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.21,
+   "final": "blocked"
+  },
+  "27276ebb-4843-47c6-b4c5-d51f0a0b92f9": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 19.6,
+   "history": [
+    [
+     20.17,
+     "held"
+    ],
+    [
+     59.23,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.23,
+   "final": "blocked"
+  },
+  "ea85313c-54e5-484f-878b-6a52ca937665": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 20.63,
+   "history": [
+    [
+     21.27,
+     "held"
+    ],
+    [
+     59.24,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.24,
+   "final": "blocked"
+  },
+  "cb36d010-0fcd-4a7b-b4e8-c65b5b479cd3": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 21.65,
+   "history": [
+    [
+     22.37,
+     "held"
+    ],
+    [
+     59.24,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.24,
+   "final": "blocked"
+  },
+  "483c1808-a81a-4b5e-8c6e-7b6f9554e984": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 22.66,
+   "history": [
+    [
+     23.48,
+     "held"
+    ],
+    [
+     59.25,
+     "published"
+    ]
+   ],
+   "decided_at": 59.25,
+   "final": "published"
+  },
+  "0407c3c4-9718-4f82-8382-75810326d73b": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 23.67,
+   "history": [
+    [
+     24.62,
+     "held"
+    ],
+    [
+     59.25,
+     "published"
+    ]
+   ],
+   "decided_at": 59.25,
+   "final": "published"
+  },
+  "1a786b0b-129d-420e-81fd-2247212555a1": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 24.68,
+   "history": [
+    [
+     25.75,
+     "held"
+    ],
+    [
+     59.26,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.26,
+   "final": "blocked"
+  },
+  "c2e30362-e72c-4ba9-97dd-6b55786f91ab": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 25.71,
+   "history": [
+    [
+     26.89,
+     "held"
+    ],
+    [
+     59.27,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.27,
+   "final": "blocked"
+  },
+  "19d5a530-b058-4b5a-bfcb-e7af01472829": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 26.72,
+   "history": [
+    [
+     26.89,
+     "held"
+    ],
+    [
+     59.27,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.27,
+   "final": "blocked"
+  },
+  "80e2033d-b4b7-4068-bcb2-222d0b1f263f": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 27.73,
+   "history": [
+    [
+     28.11,
+     "held"
+    ],
+    [
+     59.28,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.28,
+   "final": "blocked"
+  },
+  "bc2a7019-1a71-4765-adf1-5db136fc66ed": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 28.74,
+   "history": [
+    [
+     29.27,
+     "held"
+    ],
+    [
+     59.29,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.29,
+   "final": "blocked"
+  },
+  "8eaaf9f0-6910-4888-965c-2c9594a7a32d": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 29.76,
+   "history": [
+    [
+     30.44,
+     "held"
+    ],
+    [
+     59.29,
+     "published"
+    ]
+   ],
+   "decided_at": 59.29,
+   "final": "published"
+  },
+  "8416ef73-9ed2-4a9e-a45c-861a0309ac88": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 30.77,
+   "history": [
+    [
+     31.6,
+     "held"
+    ],
+    [
+     59.3,
+     "published"
+    ]
+   ],
+   "decided_at": 59.3,
+   "final": "published"
+  },
+  "7aa34db0-cedc-488d-ae36-182c1a58a890": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 31.79,
+   "history": [
+    [
+     32.78,
+     "held"
+    ],
+    [
+     59.31,
+     "published"
+    ]
+   ],
+   "decided_at": 59.31,
+   "final": "published"
+  },
+  "23ec6460-33bd-4ee4-9542-23db7ff84a70": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 32.82,
+   "history": [
+    [
+     34.04,
+     "held"
+    ],
+    [
+     59.32,
+     "published"
+    ]
+   ],
+   "decided_at": 59.32,
+   "final": "published"
+  },
+  "d8921628-ddc0-4e06-8914-26612d507b7f": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 33.86,
+   "history": [
+    [
+     35.26,
+     "held"
+    ],
+    [
+     59.33,
+     "published"
+    ]
+   ],
+   "decided_at": 59.33,
+   "final": "published"
+  },
+  "0a69e110-2dfc-40fe-89ad-4042287f7ca4": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 34.87,
+   "history": [
+    [
+     35.27,
+     "held"
+    ],
+    [
+     59.34,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.34,
+   "final": "blocked"
+  },
+  "399aa45f-f868-46ab-8394-ab5db9412ba2": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 35.89,
+   "history": [
+    [
+     36.59,
+     "held"
+    ],
+    [
+     59.35,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.35,
+   "final": "blocked"
+  },
+  "0bae7217-1c49-42eb-ab51-9d4b402c9e0e": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 36.91,
+   "history": [
+    [
+     37.81,
+     "pending"
+    ],
+    [
+     42.81,
+     "held"
+    ],
+    [
+     59.36,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.36,
+   "final": "blocked"
+  },
+  "18574371-32d1-4861-8c66-80b067aac1e1": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 37.92,
+   "history": [
+    [
+     39.05,
+     "held"
+    ],
+    [
+     59.36,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.36,
+   "final": "blocked"
+  },
+  "f4c93aa2-ef0c-470c-b4ce-322dcc122285": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 38.95,
+   "history": [
+    [
+     40.3,
+     "held"
+    ],
+    [
+     59.37,
+     "published"
+    ]
+   ],
+   "decided_at": 59.37,
+   "final": "published"
+  },
+  "25bcd3e5-73ef-4f9c-be27-8e7e02b703df": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 39.96,
+   "history": [
+    [
+     40.32,
+     "held"
+    ],
+    [
+     59.38,
+     "published"
+    ]
+   ],
+   "decided_at": 59.38,
+   "final": "published"
+  },
+  "925deb14-a2b0-46a7-8a5d-2888a7b68018": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 40.97,
+   "history": [
+    [
+     41.57,
+     "held"
+    ],
+    [
+     59.39,
+     "published"
+    ]
+   ],
+   "decided_at": 59.39,
+   "final": "published"
+  },
+  "890a792d-50b0-4e98-bee9-8bf9fdf938a4": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 41.99,
+   "history": [
+    [
+     42.88,
+     "held"
+    ],
+    [
+     59.4,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.4,
+   "final": "blocked"
+  },
+  "77a688d5-0274-4ff9-b34d-9cedbfaca981": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 43.02,
+   "history": [
+    [
+     44.18,
+     "held"
+    ],
+    [
+     59.4,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.4,
+   "final": "blocked"
+  },
+  "3fbad41c-4840-46ff-9d13-b269e4f796f0": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 44.05,
+   "history": [
+    [
+     45.49,
+     "held"
+    ],
+    [
+     59.41,
+     "published"
+    ]
+   ],
+   "decided_at": 59.41,
+   "final": "published"
+  },
+  "f967a3ed-e53a-490e-baee-feb4f9bf948e": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 45.06,
+   "history": [
+    [
+     45.5,
+     "held"
+    ],
+    [
+     59.41,
+     "published"
+    ]
+   ],
+   "decided_at": 59.41,
+   "final": "published"
+  },
+  "ec078fa1-1ed4-4e68-8dae-cadf9edcee71": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 46.07,
+   "history": [
+    [
+     46.87,
+     "held"
+    ],
+    [
+     59.42,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.42,
+   "final": "blocked"
+  },
+  "56a32907-a042-4df2-ba81-bcf0196ff099": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 47.09,
+   "history": [
+    [
+     48.21,
+     "pending"
+    ],
+    [
+     52.31,
+     "held"
+    ],
+    [
+     59.43,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.43,
+   "final": "blocked"
+  },
+  "95b24bf7-a081-496f-b3fa-570e9409d674": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 48.1,
+   "history": [
+    [
+     49.58,
+     "held"
+    ],
+    [
+     59.44,
+     "published"
+    ]
+   ],
+   "decided_at": 59.44,
+   "final": "published"
+  },
+  "66e45b30-6f96-4bec-8f28-bf8d81adebb6": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 49.11,
+   "history": [
+    [
+     49.59,
+     "held"
+    ],
+    [
+     59.44,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.44,
+   "final": "blocked"
+  },
+  "ded3308f-3320-4a63-aa4b-5a47178583a4": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 50.13,
+   "history": [
+    [
+     50.99,
+     "held"
+    ],
+    [
+     59.45,
+     "published"
+    ]
+   ],
+   "decided_at": 59.45,
+   "final": "published"
+  },
+  "13cd6516-af6b-4ee5-8713-5b746863bc74": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 51.14,
+   "history": [
+    [
+     52.34,
+     "held"
+    ],
+    [
+     59.45,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.45,
+   "final": "blocked"
+  },
+  "11a83ba6-ed62-454f-9534-47e921e9036a": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 52.16,
+   "history": [
+    [
+     53.71,
+     "held"
+    ],
+    [
+     59.46,
+     "published"
+    ]
+   ],
+   "decided_at": 59.46,
+   "final": "published"
+  },
+  "1db7fa8e-4dae-4bcd-aa5e-c1148c9996ac": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 53.2,
+   "history": [
+    [
+     53.72,
+     "held"
+    ],
+    [
+     59.47,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.47,
+   "final": "blocked"
+  },
+  "093292da-cfd2-4ce0-8ae4-861eb871db92": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 54.21,
+   "history": [
+    [
+     55.11,
+     "held"
+    ],
+    [
+     59.47,
+     "published"
+    ]
+   ],
+   "decided_at": 59.47,
+   "final": "published"
+  },
+  "93fa6c62-f5d2-4d08-96e4-fd2f2b8911dd": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 55.23,
+   "history": [
+    [
+     56.58,
+     "held"
+    ],
+    [
+     59.48,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.48,
+   "final": "blocked"
+  },
+  "a9898332-e5be-4c75-b94f-a7b10e5217f1": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 56.25,
+   "history": [
+    [
+     58.08,
+     "held"
+    ],
+    [
+     59.5,
+     "blocked"
+    ]
+   ],
+   "decided_at": 59.5,
+   "final": "blocked"
+  },
+  "e22fc83f-be61-4d7a-874b-d0ec6870cd07": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 57.27,
+   "history": [
+    [
+     58.11,
+     "blocked"
+    ]
+   ],
+   "decided_at": 58.11,
+   "final": "blocked"
+  },
+  "faaea726-3803-42df-ad46-da41429ebc2b": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 58.31,
+   "history": [
+    [
+     59.5,
+     "published"
+    ]
+   ],
+   "decided_at": 59.5,
+   "final": "published"
+  },
+  "6fc2902c-e4aa-47ad-9019-9440e3bc25ac": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 59.34,
+   "history": [
+    [
+     60.53,
+     "published"
+    ]
+   ],
+   "decided_at": 60.53,
+   "final": "published"
+  },
+  "d901a5de-9fca-4a15-b0c1-d6cbdb076f43": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 60.35,
+   "history": [
+    [
+     60.54,
+     "published"
+    ]
+   ],
+   "decided_at": 60.54,
+   "final": "published"
+  },
+  "324c5024-de8c-4bca-82ef-789e9cf93c84": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 61.37,
+   "history": [
+    [
+     61.55,
+     "published"
+    ]
+   ],
+   "decided_at": 61.55,
+   "final": "published"
+  },
+  "72aa917e-0b1d-4f1d-8178-2e5bb49c559f": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 62.38,
+   "history": [
+    [
+     62.57,
+     "blocked"
+    ]
+   ],
+   "decided_at": 62.57,
+   "final": "blocked"
+  },
+  "62337bec-4a47-4043-97a1-097f34587b1f": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 63.39,
+   "history": [
+    [
+     63.58,
+     "blocked"
+    ]
+   ],
+   "decided_at": 63.58,
+   "final": "blocked"
+  },
+  "4ac9ee02-3a7c-425e-a90a-689a26824ad1": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 64.41,
+   "history": [
+    [
+     64.6,
+     "blocked"
+    ]
+   ],
+   "decided_at": 64.6,
+   "final": "blocked"
+  },
+  "ad2a15c8-a3bc-4d47-812b-19c9379fa6ff": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 65.42,
+   "history": [
+    [
+     65.62,
+     "published"
+    ]
+   ],
+   "decided_at": 65.62,
+   "final": "published"
+  },
+  "68d6363d-7c29-4b80-b799-82ec1e47ccaa": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 66.45,
+   "history": [
+    [
+     66.64,
+     "blocked"
+    ]
+   ],
+   "decided_at": 66.64,
+   "final": "blocked"
+  },
+  "99f238bb-1444-440a-9e6d-ecc8c4de6d2a": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 67.46,
+   "history": [
+    [
+     67.66,
+     "published"
+    ]
+   ],
+   "decided_at": 67.66,
+   "final": "published"
+  },
+  "ad39e40d-54ae-44ea-a046-1cf3b60e6cf7": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 68.47,
+   "history": [
+    [
+     68.68,
+     "blocked"
+    ]
+   ],
+   "decided_at": 68.68,
+   "final": "blocked"
+  },
+  "2bf6369a-539e-47a5-93d3-7fee1f1dbd53": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 69.49,
+   "history": [
+    [
+     69.7,
+     "blocked"
+    ]
+   ],
+   "decided_at": 69.7,
+   "final": "blocked"
+  },
+  "c7e45083-af1d-4046-8669-ea880556dfb1": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 70.5,
+   "history": [
+    [
+     70.72,
+     "blocked"
+    ]
+   ],
+   "decided_at": 70.72,
+   "final": "blocked"
+  },
+  "4fbfe8ae-c048-4ac7-8126-c4debec515e2": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 71.51,
+   "history": [
+    [
+     71.74,
+     "published"
+    ]
+   ],
+   "decided_at": 71.74,
+   "final": "published"
+  },
+  "56731e2e-8ce2-4b52-a7c8-2598c1c1dec0": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 72.53,
+   "history": [
+    [
+     72.76,
+     "blocked"
+    ]
+   ],
+   "decided_at": 72.76,
+   "final": "blocked"
+  },
+  "186fceba-954a-4239-afa1-ac500f2c300f": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 73.54,
+   "history": [
+    [
+     73.79,
+     "blocked"
+    ]
+   ],
+   "decided_at": 73.79,
+   "final": "blocked"
+  },
+  "9dfcccf7-c6ab-47ff-9035-04a937ffc930": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 74.55,
+   "history": [
+    [
+     74.81,
+     "published"
+    ]
+   ],
+   "decided_at": 74.81,
+   "final": "published"
+  },
+  "586adeff-4d09-4dbb-b8c1-e88512da2102": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 75.57,
+   "history": [
+    [
+     75.84,
+     "published"
+    ]
+   ],
+   "decided_at": 75.84,
+   "final": "published"
+  },
+  "5dc3dad1-8fb8-4a89-aa4f-57f87342db2b": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 76.59,
+   "history": [
+    [
+     76.86,
+     "published"
+    ]
+   ],
+   "decided_at": 76.86,
+   "final": "published"
+  },
+  "f0412a0a-457c-4d10-92b6-c484e4323cf0": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 77.6,
+   "history": [
+    [
+     77.88,
+     "blocked"
+    ]
+   ],
+   "decided_at": 77.88,
+   "final": "blocked"
+  },
+  "a8ae414e-dc84-4cbb-9a32-bd8b73722c94": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "published",
+   "uploaded_at": 78.62,
+   "history": [
+    [
+     78.9,
+     "published"
+    ]
+   ],
+   "decided_at": 78.9,
+   "final": "published"
+  },
+  "c1d59789-8218-4447-8511-d7faea0262e9": {
+   "ws": "ws_unverified",
+   "type": "image",
+   "frames": 1,
+   "expected": "blocked",
+   "uploaded_at": 79.63,
+   "history": [
+    [
+     79.93,
+     "blocked"
+    ]
+   ],
+   "decided_at": 79.93,
+   "final": "blocked"
+  }
+ },
+ "calls": {
+  "b76911a9-9be2-4bac-a27b-d15e072a77aa": 1,
+  "e83959f8-807d-405f-9d9c-fd8d55340a27": 1,
+  "02e3f297-1800-4480-8e9c-83c736830457": 1,
+  "b56ea425-1bc1-4501-9d2e-511605583df2": 1,
+  "d4a5d287-263f-40a8-8bcd-9b2813760549": 1,
+  "5e50e11b-e6e6-44e7-8642-9037fbf8add1": 1,
+  "91aaf291-635c-4d47-a656-50cb847673b2": 1,
+  "bfc1482d-a8e5-4f73-8fb9-e905ddfc8fd9": 1,
+  "d7e45b25-ef82-4416-aee2-489a35d4a3bf": 1,
+  "3ec8d82c-09c2-4644-94c2-50b121a0e6cd": 1,
+  "fed88459-cd19-40fa-9cdd-bf3393dcf7f0": 1,
+  "9f3942c1-0953-4159-b255-85a432f6fad0": 1,
+  "df5b5c28-dcae-4072-a7db-37fa2dda408a": 1,
+  "4b88bdc4-0171-45db-a2c2-abc7ce3303c8": 1,
+  "d56f59e2-18f3-43e2-87e2-a7916a97f748": 1,
+  "fa445562-3c3a-47a5-8656-4abae3cb59d4": 1,
+  "b18b0af5-2593-466b-a92e-ce1e0020a756": 1,
+  "3f1730e4-eb47-42c6-bb0b-cfa323e2f70e": 1,
+  "fb4d290d-596f-4cd4-8cef-d738c832146e": 1,
+  "4cc9feee-c23c-4e75-a2a7-898093f0be2e": 1,
+  "8675f6d0-7e05-4faf-ad29-fc5b5ce4a80d": 1,
+  "7602011f-b832-4c86-90b7-c496ee341ee8": 1,
+  "264da156-44ff-4e76-ad81-cb91d7a3955e": 1,
+  "47f1cf0a-2759-43dd-ad6a-0ef984e4b041": 1,
+  "1ee7440a-d8bb-4f35-babd-1e851a9b761b": 1,
+  "7b6dadf1-408b-4d97-a633-27e60475f34b": 1,
+  "9f580129-54fd-49ce-b487-70658bdffaf8": 1,
+  "31d1a82f-86a8-45e6-9786-72c081dc2448": 1,
+  "de5bf6d4-4071-4c4a-b566-3ecc7b2e6b88": 1,
+  "36857dcb-20b0-47bb-9ffc-5b011bdffd89": 1,
+  "5ed2a23b-b9b5-45c0-b397-a8420a05f49e": 1,
+  "847d7a02-3571-414f-a221-ea90133c0216": 1,
+  "477a43f0-a403-45ba-b7c8-94e8999bab36": 1,
+  "a5aa705e-15d7-42c2-a044-4acc4d309231": 1,
+  "f846e05c-cf64-4179-b2b3-b4e9d710f7b5": 1,
+  "13b4533a-1ac6-47d8-9f9e-fd7cae156cb4": 1,
+  "0f11d114-eade-491f-9fcf-4b5ebd730c85": 1,
+  "36e147cd-a32c-4b81-8a76-2c2f6bb22e33": 1,
+  "803ce58f-8654-4d99-8040-f5d82a1725dc": 1,
+  "b41cf494-a2ef-408f-b30f-1aa937774dbb": 1,
+  "63441a1c-cde9-4fc1-8f4a-b535f89ee192": 1,
+  "9783de8f-5c6c-4a37-a8ca-2d96cf72b8b9": 1,
+  "27b6b9ce-f60c-4c0b-9c27-b93f952d4010": 1,
+  "b9166c1d-5130-43e5-b6eb-986f04f8828d": 1,
+  "766a263e-5848-428a-a9cc-421980c127ca": 1,
+  "cda1af17-8dbf-49b0-ab29-b2106519e6f8": 1,
+  "b703b361-61f4-4941-9ebc-8f59a4e14028": 1,
+  "554ab567-b67c-4c07-8e34-ddc40080bb11": 1,
+  "77fac169-ba29-4cb3-bf6b-66289d849a55": 1,
+  "5ca35a1c-2dd3-4ff6-93aa-e3943e4828c8": 1,
+  "2e8c2110-c4ea-4e1a-9e74-61c50c8f0a66": 1,
+  "4c2db078-c619-41d8-a9a5-b9e3be5fb36a": 1,
+  "9b734403-9160-471d-9cd0-5794739184bc": 1,
+  "07dbcc5f-9990-488e-9283-99d8cfe877b5": 1,
+  "695a0719-5aad-4b36-b269-052cb8a71f31": 1,
+  "61928c32-10cf-4f40-a414-11f221edd361": 1,
+  "4a37a0a0-e963-4d69-aad2-3efe8184bf19": 1,
+  "7ca18ca3-29a7-494e-89ef-4cd8214bf188": 1,
+  "aa2f8abf-edb9-4903-816e-6dca74fca707": 1,
+  "2b855497-b6f4-4cd9-a4fd-ff8211b17c18": 1,
+  "63ac5478-d455-47de-ae37-3213b88decee": 1,
+  "23cd53d9-22b6-4020-a673-ac7c95dde600": 1,
+  "a2267d90-f07e-41d5-b67f-efdfcfcda73d": 1,
+  "1d29b2b9-f14a-45ff-87b2-d9c0a0bef753": 1,
+  "830dd949-269f-4150-a37f-3771d2e99250": 1,
+  "a4cfde6a-d33b-409e-bdc6-14926d57b5a7": 1,
+  "9947b38f-93b0-4117-9f98-8dbed176c97f": 1,
+  "670b9079-c93d-4fb5-ae56-b73a3ed60075": 1,
+  "0696cc6d-afb9-489f-8d44-4d235f5d2107": 1,
+  "869c161a-4138-42ce-bd9e-44a2f9599e30": 1,
+  "f59df7b0-7075-4ace-94af-d24a59423e5f": 1,
+  "c0b72697-c5b4-45c5-aba4-3a9875b3f346": 1,
+  "581c350d-e226-4ce9-808d-93ae833825f1": 1,
+  "c61966b3-fbf1-4016-a950-4b39e6d2d473": 1,
+  "7617ee06-b0e6-4cd6-aee7-214f64f2c7db": 1,
+  "3029fbad-db7a-466a-9dbb-812cf0a5ce6b": 1,
+  "3596ae64-9c8c-407c-bd87-81280ae9e9f5": 1,
+  "9c272e95-47ea-4292-b2bb-229252b87baa": 1,
+  "d5649b97-df94-414e-9540-abd8b630da9b": 1,
+  "490ff424-0e3f-48de-a647-f5fca37d9669": 1,
+  "d4c006f8-b024-4e23-8b02-4f4b962fce13": 1,
+  "5d88cdc7-3dbf-49a3-8434-b8fa46ecbc0c": 1,
+  "71a61ee2-6253-4864-a40a-0d51ad9c0e50": 1,
+  "9d50f1bb-2549-443f-a7ed-a1e9d90c0790": 1,
+  "5743e169-93cc-4033-8520-79087cd1e9d4": 1,
+  "1af70023-5e21-44ea-ade2-da9353063fd1": 1,
+  "e7e287ce-4f5d-4b0b-94ec-1a2128b46d7a": 1,
+  "c91d8ad9-4ef8-448d-98e8-e4d552e6c724": 1,
+  "ccfb90ee-3ceb-4b38-9daa-37e9059cd10e": 1,
+  "ef161f96-f806-4f76-a18f-096ac7c13b29": 1,
+  "8b17d1db-9910-44f8-8ed6-6dab4c1e1bbb": 1,
+  "fc9d8eee-2cb7-4156-a5fa-962949fa4743": 1,
+  "c1901a28-6378-4018-9035-d49ab0dc8750": 1,
+  "09a08fea-56cb-45ef-a27d-215ee66b5613": 1,
+  "f467b940-5041-435a-926c-493fcfb2aae4": 1,
+  "80e9acaf-a43c-488c-8756-07d16d9df464": 1,
+  "6954317c-d65d-4098-9d53-6fcdd69564e9": 1,
+  "f1ec2317-f3a0-4d74-bc40-e0e08deb86d6": 1,
+  "218f4a90-1649-4e8b-beb9-4bfe58206d39": 1,
+  "f3cd1d3b-4c37-4981-8605-1fbc088d06bd": 1,
+  "fbd10ca9-e05d-44a4-becf-432406a65e94": 1,
+  "c805724d-e8a6-40c7-b26d-b7413c605e65": 1,
+  "b1b085fe-df5f-4b80-9360-ae770d48b320": 1,
+  "bcc067a5-4047-40bf-91e6-13905dda5b5d": 1,
+  "2487653d-ebe0-4e20-bdc7-6894c5776c86": 1,
+  "fb124bb8-6eb3-41ec-ae78-4b4ac0b0e116": 1,
+  "72941a42-9454-42ae-ac5c-369dd22bdba8": 1,
+  "276ff692-5d7a-48c3-ac0b-be3d9e776a7f": 1,
+  "305abb84-e316-4dae-94b0-eea11591451c": 1,
+  "fed36503-9516-4d9f-b625-c0a94d0e09ec": 1,
+  "daf98b4e-60a0-4e44-bcb9-8ed963863467": 1,
+  "0bdc128a-748c-49cb-b455-8bc0241bf875": 1,
+  "25ec0656-53ca-436a-9d48-58a80301f0ab": 1,
+  "244a9a75-c2c2-4df0-b20c-bb0a51c8326e": 1,
+  "35b022ef-9cbb-4969-97e9-ceccfe145dad": 1,
+  "58f0a46d-793e-4a42-a3cc-a44e7b312166": 1,
+  "836980c0-05ae-414e-be53-5abd237511e8": 1,
+  "c852b47e-9fa0-49bc-8133-03a3d76ac1d1": 1,
+  "e6a5e52d-5028-4066-a73c-5a10f7d34c83": 1,
+  "a19cf506-7fa3-4775-9761-34a9a75fd950": 1,
+  "1554fa9f-b427-409b-b631-04f6b9101125": 1,
+  "ad1a0259-e8e8-4fe7-92cc-0ad4d7d766ce": 1,
+  "6bae2fd9-6085-4c16-9ffc-b1cca35f3719": 1,
+  "dafdbe25-0fa4-4cb8-9469-923ef8588c42": 1,
+  "a6830564-36b9-4991-aee9-715c596f441a": 1,
+  "87a6afcd-a540-4e5f-a646-81dd708f06af": 1,
+  "4d8c6522-f6db-4e5a-bdf8-40e84d7ae8c0": 1,
+  "0dc0529f-98ec-4a1b-890a-2ecf3920f740": 1,
+  "a7b55867-8df3-43f1-a3a4-85db76104e3d": 1,
+  "0097ff99-2bcb-4c62-b49b-d922ce398095": 1,
+  "38fe4682-7f0e-4746-816a-f7ee55f78b81": 1,
+  "e3cb9ddc-0f10-4eaf-b756-e4b80d269a66": 1,
+  "d809e961-61e4-490e-810a-b1f958f6e7df": 1,
+  "e553ccd2-efcc-4187-858f-ea47b1736996": 1,
+  "7363e46c-8a14-4c71-b382-061b22ccb565": 1,
+  "9f2ed034-93af-456a-95b7-13c38d5cc8a8": 1,
+  "26aaa6bb-92a9-463e-91aa-252fbf4021cd": 1,
+  "fff089c0-3b3d-487e-9f33-f910e3a39833": 1,
+  "b942a6fe-5979-4693-acce-408d6b352375": 1,
+  "8c192193-9bb8-4d8f-bf64-8c70c5153806": 1,
+  "8f4bd8c7-baf5-4b53-9e88-d595e902e45f": 1,
+  "59493f4c-b2ed-4dea-bf86-fb809ae87189": 1,
+  "63cfc84a-f22e-4ee7-84db-090d4ef03b37": 1,
+  "572f37b2-7dbc-436c-9669-ec727c92b01f": 1,
+  "c5d33807-4c8d-4929-8e6a-71127aaf361d": 1,
+  "ee996874-a799-483c-a41e-575faa424184": 1,
+  "aa703195-c10b-4081-b764-3456d1bd60ff": 1,
+  "60317676-8605-48ff-affa-b802715bec02": 1,
+  "15210196-627e-4d66-8540-83eea08b69db": 1,
+  "1afbc4b1-0a7e-4ea3-9ba2-9d79386c2904": 1,
+  "09162c37-7ed5-4f49-b1bd-5822c23d553a": 1,
+  "3a1c7c55-2037-4fbe-b1ae-2f6c5840627c": 1,
+  "9b263aaa-adac-4fe0-aef1-576423db7014": 1,
+  "81c3837a-f5ea-408d-af41-27a56a034aef": 1,
+  "f2239e8e-4b69-45f6-999a-047e19114a7f": 1,
+  "1c2fb87a-3a3b-4d30-8e8e-797da6837fe2": 1,
+  "5028b678-afc1-4b99-b3cb-705996657b61": 1,
+  "5aae3286-9b7f-4d32-8bef-bbbda48b2d7b": 1,
+  "4e96d278-c816-4fe8-b619-827241f56e91": 1,
+  "716088ea-3140-492f-b6e6-0db3135a2166": 1,
+  "5e6a3726-ca1d-44fc-bde4-60d489ea3601": 1,
+  "84f52df9-4061-4413-881a-5f5b5159a838": 1,
+  "6a7374a3-f2b0-4af3-ba55-f6e76a5dfdc6": 1,
+  "681b37a0-0680-48b0-8330-79496313013f": 1,
+  "3fabf9fc-ecfc-404f-9796-47c932289bce": 1,
+  "43d9f42e-50cd-4071-b38d-297ee8441162": 1,
+  "917f4a46-70bf-471b-954d-34f35011cac0": 1,
+  "ac12fd4f-6090-4a4f-aadd-afaff0cdd14c": 1,
+  "00e7afec-d1a5-4490-a71e-937454e1a8bb": 1,
+  "c575a8f6-402f-4b43-a01d-2e848e599b62": 1,
+  "0a38fa8c-8d6d-48b6-8e7c-28a5f87463fb": 1,
+  "2ca00914-7ffd-4a6f-84b3-e2c8d4c50381": 1,
+  "c46b9230-92f8-4753-be92-bd0419ed6df8": 1,
+  "59542190-d858-4d58-817a-2c4932263299": 1,
+  "ed8e6c55-beae-4b10-8680-8ccc13571d01": 1,
+  "4678ac4c-f044-49f1-aac2-83c8b18a7e09": 1,
+  "84ee8e58-c01a-4231-962b-9c64fded88a6": 1,
+  "d925c364-282e-410c-9629-6c992f7af28d": 1,
+  "f1e7fa77-8031-4b29-98dd-08665bbc7414": 1,
+  "34d695b7-b2c4-4677-b456-8355f67dd489": 1,
+  "abdffce0-6f58-4f71-8c35-caebda3e2942": 1,
+  "8ee8121a-43d8-430e-a021-f3813638834a": 1,
+  "c95e06aa-4cb2-47e9-bce7-57fb39afa56a": 1,
+  "4b80bf35-182f-447e-bc89-6f2a0ceada60": 1,
+  "bd33baf4-925c-4d50-a192-41147dee5669": 1,
+  "191d56e8-0f45-498e-bbeb-f9f0f248348c": 1,
+  "fad5cd15-263a-4438-8a89-9d126c5964c8": 1,
+  "6fbdaca3-47ec-495f-8759-950777b50126": 1,
+  "54da6773-7b0e-4003-9942-cd365e24f802": 1,
+  "99c90a1e-536f-4563-8df9-bdec2325fa71": 1,
+  "8be0106e-7e04-4824-b877-2fcc1d588eea": 1,
+  "225a868f-1232-4f1e-ae50-3a766f4f43a1": 1,
+  "8b0808ab-84c4-4102-a73c-201d14797e85": 1,
+  "44ca3729-f722-48b4-86c1-6a803c790fb9": 1,
+  "7f9297c1-3896-4706-a704-0dcadfbbddd8": 1,
+  "f91d4b02-c3b2-4a52-9371-6df539f94338": 1,
+  "b77f7d16-d712-471f-8f12-22a33469e86e": 1,
+  "45b7065e-fa8a-4bcf-addf-57c8cd0634d8": 1,
+  "59fb5eb5-e764-4de8-b40e-17e83e3906ed": 1,
+  "ec1f67f8-305a-4f0f-9ea1-9f8bb3f79ad8": 1,
+  "d911f6fc-0674-40d8-b48b-35073449ae3c": 1,
+  "609d62f4-bf19-434a-b7d2-9c3e00e507de": 1,
+  "088185c3-a45e-44f8-bef8-fc7fdf8f9876": 1,
+  "2c2405a1-6601-4178-94cd-31fbb8e8601b": 1,
+  "84d25dd5-8095-4d4f-87ae-d1a1e3bdcdeb": 1,
+  "11594d20-2528-494c-b958-fe6b5953232f": 1,
+  "e8233b54-d96f-4816-bc1b-9993018c4229": 1,
+  "33144a05-bff0-444f-9f9b-27fd8ea63964": 1,
+  "4d734202-3123-4378-9cf5-944262090591": 1,
+  "b479fb07-d7b6-4eca-b8b3-2296db3d4957": 1,
+  "7a84d2db-bcd0-47c1-b1a9-cc087ffc760a": 3,
+  "139ee3bb-cb8c-434c-a7ee-8a5406226219": 2,
+  "67185d60-cdba-4098-85f1-97009e324b75": 2,
+  "483d84de-61fc-4ea1-bce6-fde7d363de22": 2,
+  "27649833-a2ff-4607-8fe9-2f47b74a7fc1": 2,
+  "5daaf8a7-57ae-4e48-8b07-3bc3bb05c65e": 2,
+  "0bae7217-1c49-42eb-ab51-9d4b402c9e0e": 2,
+  "56a32907-a042-4df2-ba81-bcf0196ff099": 2,
+  "e22fc83f-be61-4d7a-874b-d0ec6870cd07": 1,
+  "967f148e-874e-4da4-a0d6-b2923de2cae0": 1,
+  "21c59859-b6ac-43a6-b1f0-ec2af5c70aef": 1,
+  "ea85313c-54e5-484f-878b-6a52ca937665": 1,
+  "cb36d010-0fcd-4a7b-b4e8-c65b5b479cd3": 1,
+  "483c1808-a81a-4b5e-8c6e-7b6f9554e984": 1,
+  "27276ebb-4843-47c6-b4c5-d51f0a0b92f9": 1,
+  "df732719-2a2f-42f5-9e90-ba5bec617416": 1,
+  "1a786b0b-129d-420e-81fd-2247212555a1": 1,
+  "0407c3c4-9718-4f82-8382-75810326d73b": 1,
+  "c2e30362-e72c-4ba9-97dd-6b55786f91ab": 1,
+  "19d5a530-b058-4b5a-bfcb-e7af01472829": 1,
+  "bc2a7019-1a71-4765-adf1-5db136fc66ed": 1,
+  "80e2033d-b4b7-4068-bcb2-222d0b1f263f": 1,
+  "8eaaf9f0-6910-4888-965c-2c9594a7a32d": 1,
+  "7aa34db0-cedc-488d-ae36-182c1a58a890": 1,
+  "23ec6460-33bd-4ee4-9542-23db7ff84a70": 1,
+  "8416ef73-9ed2-4a9e-a45c-861a0309ac88": 1,
+  "d8921628-ddc0-4e06-8914-26612d507b7f": 1,
+  "399aa45f-f868-46ab-8394-ab5db9412ba2": 1,
+  "0a69e110-2dfc-40fe-89ad-4042287f7ca4": 1,
+  "18574371-32d1-4861-8c66-80b067aac1e1": 1,
+  "f4c93aa2-ef0c-470c-b4ce-322dcc122285": 1,
+  "25bcd3e5-73ef-4f9c-be27-8e7e02b703df": 1,
+  "925deb14-a2b0-46a7-8a5d-2888a7b68018": 1,
+  "3fbad41c-4840-46ff-9d13-b269e4f796f0": 1,
+  "890a792d-50b0-4e98-bee9-8bf9fdf938a4": 1,
+  "77a688d5-0274-4ff9-b34d-9cedbfaca981": 1,
+  "ec078fa1-1ed4-4e68-8dae-cadf9edcee71": 1,
+  "f967a3ed-e53a-490e-baee-feb4f9bf948e": 1,
+  "ded3308f-3320-4a63-aa4b-5a47178583a4": 1,
+  "95b24bf7-a081-496f-b3fa-570e9409d674": 1,
+  "66e45b30-6f96-4bec-8f28-bf8d81adebb6": 1,
+  "13cd6516-af6b-4ee5-8713-5b746863bc74": 1,
+  "11a83ba6-ed62-454f-9534-47e921e9036a": 1,
+  "093292da-cfd2-4ce0-8ae4-861eb871db92": 1,
+  "1db7fa8e-4dae-4bcd-aa5e-c1148c9996ac": 1,
+  "a9898332-e5be-4c75-b94f-a7b10e5217f1": 1,
+  "93fa6c62-f5d2-4d08-96e4-fd2f2b8911dd": 1,
+  "faaea726-3803-42df-ad46-da41429ebc2b": 1,
+  "6fc2902c-e4aa-47ad-9019-9440e3bc25ac": 1,
+  "d901a5de-9fca-4a15-b0c1-d6cbdb076f43": 1,
+  "324c5024-de8c-4bca-82ef-789e9cf93c84": 1,
+  "72aa917e-0b1d-4f1d-8178-2e5bb49c559f": 1,
+  "62337bec-4a47-4043-97a1-097f34587b1f": 1,
+  "4ac9ee02-3a7c-425e-a90a-689a26824ad1": 1,
+  "ad2a15c8-a3bc-4d47-812b-19c9379fa6ff": 1,
+  "68d6363d-7c29-4b80-b799-82ec1e47ccaa": 1,
+  "99f238bb-1444-440a-9e6d-ecc8c4de6d2a": 1,
+  "ad39e40d-54ae-44ea-a046-1cf3b60e6cf7": 1,
+  "2bf6369a-539e-47a5-93d3-7fee1f1dbd53": 1,
+  "c7e45083-af1d-4046-8669-ea880556dfb1": 1,
+  "4fbfe8ae-c048-4ac7-8126-c4debec515e2": 1,
+  "56731e2e-8ce2-4b52-a7c8-2598c1c1dec0": 1,
+  "186fceba-954a-4239-afa1-ac500f2c300f": 1,
+  "9dfcccf7-c6ab-47ff-9035-04a937ffc930": 1,
+  "586adeff-4d09-4dbb-b8c1-e88512da2102": 1,
+  "5dc3dad1-8fb8-4a89-aa4f-57f87342db2b": 1,
+  "f0412a0a-457c-4d10-92b6-c484e4323cf0": 1,
+  "a8ae414e-dc84-4cbb-9a32-bd8b73722c94": 1,
+  "c1d59789-8218-4447-8511-d7faea0262e9": 1
+ }
+}

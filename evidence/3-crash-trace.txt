@@ -1,0 +1,11 @@
+media faec9d7d-9130-4b67-bc70-8819d5842c85
+status timeline (s since upload): [(0.0, 'pending'), (30.5, 'blocked')]
+provider calls for this media: 2
+
+events:
+20:36:37.334 media_created                {"type": "video", "frames": 12, "source": "upload", "user_id": "member_u"}
+20:36:37.440 provider_call                {"frames": 12, "attempt": 1, "breaker": "closed"}
+20:37:07.685 lease_expired_redelivered    {"attempt": 1}
+20:37:07.720 provider_call                {"frames": 12, "attempt": 2, "breaker": "closed"}
+20:37:07.751 provider_answer              {"detail": "", "attempt": 2, "outcome": "scored", "elapsed_ms": 6}
+20:37:07.751 media_decided                {"via": "sync", "status": "blocked", "attempt": 2, "reasons": ["explicit content in unverified workspace (frames 11)"], "explicit": true, "frames_scor

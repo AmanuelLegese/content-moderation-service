@@ -32,6 +32,7 @@ p.add_argument("--images-for", type=float, default=80, help="seconds of single-i
 p.add_argument("--drain", type=float, default=180, help="max seconds to wait for decisions at the end")
 p.add_argument("--seed", type=int, default=7)
 p.add_argument("--out")
+p.add_argument("--resummarize", help="recompute the summary of a saved result file and rewrite it")
 args = p.parse_args()
 
 rng = random.Random(args.seed)
@@ -145,6 +146,12 @@ def main() -> None:
 
     calls = http.get(f"{args.provider}/_stats").json()["calls"]
     met = http.get(f"{args.api}/metrics", params={"since": t0}).json()
+    report = summarize(items, samples, calls, met)
+    if args.out:
+        Path(args.out).write_text(json.dumps(report, indent=1, default=str))
+
+
+def summarize(items, samples, calls, met) -> dict:
     outage_start, outage_end = args.outage_at, args.outage_at + args.outage_for
 
     def phase(u):
@@ -155,14 +162,15 @@ def main() -> None:
     for ph in ("before", "during", "after"):
         lat = sorted(i["decided_at"] - i["uploaded_at"] for i in images
                      if phase(i["uploaded_at"]) == ph and i.get("decided_at") is not None)
-        first_change = sorted(i["history"][1][0] - i["uploaded_at"] for i in images
-                              if phase(i["uploaded_at"]) == ph and len(i["history"]) > 1)
+        # time until the item first left 'pending' (held or decided): how quickly the system responded
+        first_change = sorted(next(t for t, s in i["history"] if s != "pending") - i["uploaded_at"] for i in images
+                              if phase(i["uploaded_at"]) == ph and any(s != "pending" for _, s in i["history"]))
         by_phase[ph] = {
             "images": sum(1 for i in images if phase(i["uploaded_at"]) == ph),
             "decided": len(lat),
             "p50_decision_s": round(lat[len(lat) // 2], 1) if lat else None,
             "max_decision_s": round(lat[-1], 1) if lat else None,
-            "p50_first_status_change_s": round(first_change[len(first_change) // 2], 1) if first_change else None,
+            "p50_left_pending_s": round(first_change[len(first_change) // 2], 1) if first_change else None,
         }
 
     report = {
@@ -174,7 +182,7 @@ def main() -> None:
         "undecided_at_end": sum(1 for i in items.values() if i.get("decided_at") is None),
         "provider_calls_total": sum(calls.get(m, 0) for m in items),
         "provider_calls_per_upload": round(sum(calls.get(m, 0) for m in items) / max(1, len(items)), 2),
-        "uploads_scored_more_than_once": sum(1 for m in items if calls.get(m, 0) > 1),
+        "uploads_called_more_than_once": sum(1 for m in items if calls.get(m, 0) > 1),
         "max_oldest_waiting_job_s": round(max((s["oldest_waiting_job_s"] for s in samples), default=0), 1),
         "max_oldest_undecided_media_s": round(max((s["oldest_undecided_media_s"] for s in samples), default=0), 1),
         "ws_unverified_images_by_phase": by_phase,
@@ -182,11 +190,17 @@ def main() -> None:
         "samples": samples,
         "items": items,
     }
-    summary = {k: v for k, v in report.items() if k not in ("samples", "items", "final_metrics")}
+    report["calls"] = calls
+    summary = {k: v for k, v in report.items() if k not in ("samples", "items", "final_metrics", "calls")}
     print(json.dumps(summary, indent=2))
-    if args.out:
-        Path(args.out).write_text(json.dumps(report, indent=1, default=str))
+    return report
 
 
 if __name__ == "__main__":
-    main()
+    if args.resummarize:
+        saved = json.loads(Path(args.resummarize).read_text())
+        items = {k: {**v, "history": [tuple(h) for h in v["history"]]} for k, v in saved["items"].items()}
+        report = summarize(items, saved["samples"], saved["calls"], saved["final_metrics"])
+        Path(args.resummarize).write_text(json.dumps(report, indent=1, default=str))
+    else:
+        main()
