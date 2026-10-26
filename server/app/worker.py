@@ -180,17 +180,24 @@ def recover_parked() -> None:
                 for j in rows:
                     log("rescreen_scheduled", conn=conn, workspace_id=j["workspace_id"], media_id=str(j["media_id"]),
                         job_id=str(j["id"]), round=j["rescreen_rounds"])
-            if breaker.state() == "half_open":
+            # Parked jobs wait for a success, but with no other traffic none ever comes (e.g. two malformed
+            # answers never open the breaker). So, at most once per cooldown and only when nothing else is
+            # ready, retry the oldest parked job as a probe. Its counters are set one short of the limit:
+            # a failed probe costs one call and parks it again.
+            if breaker.state() != "open" and breaker.r.set(
+                    "lock:probe", "1", nx=True, px=int(config.BREAKER_COOLDOWN_S * 1000)):
                 ready = conn.execute(
                     "SELECT 1 FROM jobs WHERE status = 'queued' AND run_after <= now() LIMIT 1").fetchone()
                 if not ready:
-                    # Nothing to probe with: use the oldest parked job as the probe.
                     j = conn.execute(
-                        """UPDATE jobs SET status = 'queued', run_after = now(), parked_at = NULL, round_failures = 0
+                        """UPDATE jobs SET status = 'queued', run_after = now(), parked_at = NULL,
+                                  round_failures = %s - 1, malformed = %s - 1
                            WHERE id = (SELECT id FROM jobs WHERE status = 'parked' AND rescreen_rounds < %s
+                                         AND parked_at < now() - make_interval(secs => %s)
                                        ORDER BY parked_at LIMIT 1 FOR UPDATE SKIP LOCKED)
                            RETURNING id, media_id, workspace_id""",
-                        (config.MAX_RESCREEN_ROUNDS,),
+                        (config.MAX_ATTEMPTS, config.MAX_MALFORMED, config.MAX_RESCREEN_ROUNDS,
+                         config.BREAKER_COOLDOWN_S),
                     ).fetchone()
                     if j:
                         log("probe_scheduled", conn=conn, workspace_id=j["workspace_id"], media_id=str(j["media_id"]),
