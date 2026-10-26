@@ -14,6 +14,8 @@ cd ui && npm ci && npm test                                # 17 UI tests
 cd server && uv run python scripts/workload.py --label fixed --out ../evidence/workload-fixed.json
 ```
 
+Full usage guide (every route with curl, provider control, tests, configuration, troubleshooting): [docs/USAGE.md](docs/USAGE.md). Tools and why each was chosen: [docs/TOOLS.md](docs/TOOLS.md).
+
 Export `HANDLER=broken` in the shell for **every** compose command when you use the broken handler. Without it, `docker compose run tests` recreates the API with the fixed handler and you get a mixed stack. This happened to me once (see Evidence).
 
 ## Design in one screen
