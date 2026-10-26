@@ -220,7 +220,3 @@ Prices are from memory and are **not checked against current price sheets**. Tre
   2. Make provider calls async (asyncio) and send frames in batches, so each worker can have hundreds of calls in flight.
   3. Replace the queue with a broker that's fair per workspace (Redis Streams or SQS, one stream per busy workspace, a round-robin dispatcher). Keep Postgres as the source of truth for media and `provider_results`.
   4. Then provider quota and cost become the limit. Score fewer frames in videos where the first pass found nothing, and cache results by perceptual hash so re-uploads don't pay twice.
-
-## Time spent
-
-About 1 hour of wall-clock time (22:40–23:40 EAT, 26 Oct), working with Claude Code, which wrote most of the code. See `AI.md`. Add your own review time here.
