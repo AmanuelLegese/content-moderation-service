@@ -1,0 +1,10 @@
+body { font: 14px/1.4 system-ui, sans-serif; margin: 0; background: #fafafa; color: #222; }
+main { max-width: 1000px; margin: 0 auto; padding: 16px; }
+header { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+table { border-collapse: collapse; width: 100%; background: #fff; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #ddd; vertical-align: top; }
+textarea { width: 100%; font-family: monospace; }
+.error { color: #a00; background: #fee; padding: 8px; border-radius: 4px; }
+.status.published { color: #070; }
+.status.blocked { color: #a00; }
+.status.held { color: #a60; }
