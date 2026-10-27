@@ -5,6 +5,13 @@ uploads one image per second. The provider goes down part-way through and comes 
 
 Every media item is generated with a known ground truth (computed with app.policy over
 *all* frames), so the report counts unsafe media that went live, not just job states.
+
+How it runs: four threads at once. `burst` posts the 200 videos as fast as it can,
+`trickle` posts one image per second, `outage` flips the provider into the outage
+mode and back on a timer, and `poll` records every item's status changes plus the
+API's /metrics once a second. Afterwards `summarize` computes the report.
+Why a fixed seed: the same "random" workload every run, so broken vs fixed is a
+like-for-like comparison.
 """
 
 import argparse
@@ -17,6 +24,7 @@ from pathlib import Path
 
 import httpx
 
+# Make `app` importable when run as a script, to reuse the real policy for the ground truth.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from app.policy import LABELS, decide  # noqa: E402
 
@@ -42,15 +50,18 @@ H = {"ws_verified": {"X-User-Id": "member_v", "X-Workspace-Id": "ws_verified"},
 VERIFIED = {"ws_verified": True, "ws_unverified": False}
 
 items: dict[str, dict] = {}  # media id -> info
-lock = threading.Lock()
+lock = threading.Lock()  # items is written by two upload threads and read by the poller
 t0 = time.time()
 
 
 def now() -> float:
+    """Seconds since the run started: every timestamp in the report uses this clock."""
     return round(time.time() - t0, 2)
 
 
 def make_video() -> dict:
+    """A 10-60 frame video. The interesting content is placed at the END on purpose:
+    a handler that only looks at the first frames (the incident) gets these wrong."""
     n = rng.choice([10, 20, 25, 40, 60])
     frames = [{"explicit": round(rng.random() * 0.3, 2)} for _ in range(n)]
     kind = rng.random()
@@ -64,12 +75,14 @@ def make_video() -> dict:
 
 
 def make_image() -> dict:
+    """Images for the unverified workspace: 40% explicit (must be blocked), 10% minor (blocked), 50% clean."""
     r = rng.random()
     f = {"explicit": 0.95} if r < 0.4 else {"minor": 0.85} if r < 0.5 else {"explicit": 0.1}
     return {"type": "image", "source": "upload", "frames": [f]}
 
 
 def expected(item: dict, ws: str) -> str:
+    """The correct final status: the policy applied to every frame, with missing labels as 0."""
     full = [{label: f.get(label, 0.0) for label in LABELS} for f in item["frames"]]
     return decide(full, VERIFIED[ws]).status
 
@@ -99,6 +112,8 @@ def is_decided(m: dict) -> bool:
 
 
 def poll(stop: threading.Event, samples: list) -> None:
+    """Once a second: record each undecided item's status changes, flag anything unsafe that is
+    published at any moment (even briefly), and sample the API's queue-age metrics."""
     while not stop.is_set():
         with lock:
             ids = list(items)
@@ -129,6 +144,7 @@ def outage() -> None:
 
 
 def main() -> None:
+    # Zero the provider's call counters so calls-per-upload only counts this run.
     http.post(f"{args.provider}/_reset")
     stop, samples = threading.Event(), []
     threads = [threading.Thread(target=f) for f in (burst, trickle, outage)]
@@ -152,6 +168,9 @@ def main() -> None:
 
 
 def summarize(items, samples, calls, met) -> dict:
+    """Turn the raw observations into the report. Image latencies are split by when the
+    image was uploaded (before / during / after the outage) to show the burst in the
+    other workspace doesn't delay them. p50 = median."""
     outage_start, outage_end = args.outage_at, args.outage_at + args.outage_for
 
     def phase(u):

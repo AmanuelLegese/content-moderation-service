@@ -22,10 +22,12 @@ http = httpx.Client(timeout=30)
 
 
 def h(user: str) -> dict:
+    """Identity headers for one of the seeded users."""
     return {"X-User-Id": user, "X-Workspace-Id": USERS[user]}
 
 
 def upload(user: str, item: dict) -> str:
+    """POST /media and check the exact response shape the brief specifies. Returns the media id."""
     r = http.post(f"{API}/media", json=item, headers=h(user))
     assert r.status_code == 202, r.text
     assert r.json()["status"] == "pending"
@@ -39,10 +41,12 @@ def get(user: str, media_id: str) -> dict:
 
 
 def image(**scores) -> dict:
+    """image(explicit=0.95) -> a one-frame media document."""
     return {"type": "image", "source": "upload", "frames": [scores]}
 
 
 def video(n: int, at: dict[int, dict] | None = None) -> dict:
+    """An n-frame clean video; `at` overrides chosen frames, e.g. video(20, {19: {"explicit": 0.95}})."""
     frames = [{"explicit": 0.01} for _ in range(n)]
     for i, s in (at or {}).items():
         frames[i] = s
@@ -73,6 +77,7 @@ def wait_for(user: str, media_id: str, pred=is_decided, timeout: float = 30, for
 
 
 def provider(mode: str = "ok", delay_ms: int = 0, **extra) -> None:
+    """Switch the fake provider's behaviour (ok / slow / timeout / error / rate_limit / malformed)."""
     r = http.post(f"{PROVIDER}/_control", json={"mode": mode, "delay_ms": delay_ms, **extra})
     assert r.status_code == 200, r.text
 
@@ -82,14 +87,17 @@ def stats() -> dict:
 
 
 def calls(media_id: str) -> int:
+    """Every provider request for this media, failed ones included."""
     return stats()["calls"].get(media_id, 0)
 
 
 def scored(media_id: str) -> int:
+    """Successful scorings only: rule 8 says this must never exceed 1."""
     return stats().get("scored", {}).get(media_id, 0)
 
 
 def wait_breaker_not_open(timeout: float = 30) -> None:
+    """Tests share one stack: wait until an outage left by a previous test has cooled down."""
     deadline = time.time() + timeout
     while time.time() < deadline:
         b = http.get(f"{API}/health").json().get("breaker", "closed")
@@ -100,6 +108,8 @@ def wait_breaker_not_open(timeout: float = 30) -> None:
 
 @pytest.fixture(autouse=True)
 def healthy_provider():
+    """Runs around every test: start with a healthy provider and leave it healthy,
+    so one test's outage can't leak into the next."""
     provider("ok")
     wait_breaker_not_open()
     yield

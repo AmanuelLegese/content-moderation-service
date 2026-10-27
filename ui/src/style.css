@@ -1,3 +1,4 @@
+/* Minimal styling; .error is used for every failure banner so failures are visually distinct from empty states. */
 body { font: 14px/1.4 system-ui, sans-serif; margin: 0; background: #fafafa; color: #222; }
 main { max-width: 1000px; margin: 0 auto; padding: 16px; }
 header { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }

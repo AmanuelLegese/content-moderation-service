@@ -1,8 +1,12 @@
+// The single page: pick a user, see the review queue (admins only), recent media, and an upload box.
 import { useCallback, useEffect, useState } from "react";
 import { api, USERS, type Media, type User } from "./api";
 import { ReviewQueue } from "./ReviewQueue";
 
+// Baked in at build time from HANDLER (docker-compose passes it as a build arg), so the UI
+// reproduces its part of the incident exactly when the backend does.
 const BROKEN = import.meta.env.VITE_HANDLER === "broken";
+// Pre-filled upload: the example document from the brief.
 const EXAMPLE = JSON.stringify(
   { type: "video", source: "generation", prompt: "two adults on a beach at sunset", frames: [{ explicit: 0.02 }, { explicit: 0.95, self_harm: 0.1 }] },
   null,
@@ -11,18 +15,23 @@ const EXAMPLE = JSON.stringify(
 
 export function App() {
   const [user, setUser] = useState<User>(USERS[0]);
+  // null = not loaded yet; [] = loaded and empty. Kept apart for the same reason as the review queue.
   const [media, setMedia] = useState<Media[] | null>(null);
   const [mediaError, setMediaError] = useState<string | null>(null);
   const [draft, setDraft] = useState(EXAMPLE);
   const [uploadResult, setUploadResult] = useState<string | null>(null);
 
+  // useCallback keeps these functions stable until the user changes, so ReviewQueue's
+  // effect doesn't restart its polling on every render.
   const loadReview = useCallback(() => api<Media[]>(user, "/review"), [user]);
   const decide = useCallback(
     (id: string, action: "approve" | "reject") => api(user, `/review/${id}/${action}`, { method: "POST" }),
     [user],
   );
 
+  // Poll the workspace's recent media every 3s so status changes (pending -> held -> published) show up.
   useEffect(() => {
+    // `live` ignores responses that arrive after the user switched: they belong to the old workspace.
     let live = true;
     const load = () =>
       api<Media[]>(user, "/media?limit=20")
@@ -37,6 +46,7 @@ export function App() {
     };
   }, [user]);
 
+  // Submit the textarea as-is. The server validates it; a refused prompt's reasons are shown.
   async function upload() {
     try {
       const r = await api<{ id: string }>(user, "/media", { method: "POST", body: draft });
@@ -61,6 +71,8 @@ export function App() {
         {BROKEN && <strong className="error"> BROKEN handler (incident reproduction)</strong>}
       </header>
 
+      {/* Members never even request /review (the API would answer 403; rule 6).
+          key={user.id} remounts the queue on user switch so it starts again from "loading". */}
       {user.role === "admin" ? (
         <ReviewQueue key={user.id} load={loadReview} decide={decide} broken={BROKEN} />
       ) : (

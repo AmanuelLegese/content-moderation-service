@@ -4,37 +4,60 @@ This is a deliberately conservative keyword/regex screen with normalisation agai
 the usual evasions (leetspeak, homoglyphs, spaced-out letters, number words). In
 production it would be the first layer in front of an LLM classifier: see README part 3.
 False positives refuse a prompt (the user rephrases); false negatives reach the generator.
+
+How it works:
+1. normalise(): undo common disguises so "s1xteen", "r.a.p.e" and Cyrillic look-alike
+   letters read as plain English.
+2. Look for ages under 18, written as digits ("16-year-old", "15 yo") or words ("sixteen").
+3. Run each category's regex list; the first hit per category is enough.
+4. As a fallback, search for unambiguous terms in the text with all separators removed.
+Why regex and not an LLM here: it is deterministic, instant, free, testable offline,
+and the brief has no real classifier. Its limits are documented in README part 3.
 """
 
 import re
 import unicodedata
 
+# Ages written as words. Only up to 17: anything we parse here is a minor by definition.
 NUMBER_WORDS = {
     "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8,
     "nine": 9, "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14,
     "fifteen": 15, "sixteen": 16, "seventeen": 17,
 }
+# Non-Latin letters that look like Latin ones (Cyrillic "а" vs Latin "a"): a classic filter bypass.
 HOMOGLYPHS = str.maketrans({
     "а": "a", "е": "e", "о": "o", "р": "p", "с": "c", "у": "y", "х": "x", "і": "i",
     "ј": "j", "ѕ": "s", "ԁ": "d", "ɡ": "g", "ⅼ": "l",
 })
+# Leetspeak: "r4p3" -> "rape". Applied to a copy only, because digits are needed for age detection.
 LEET = str.maketrans({"0": "o", "1": "i", "3": "e", "4": "a", "5": "s", "7": "t", "@": "a", "$": "s", "!": "i"})
+# Invisible characters (zero-width space/joiners, soft hyphen) inserted to split words: "ra​pe".
 ZERO_WIDTH = re.compile("[​‌‍⁠﻿­]")
 # "r a p e", "r.a.p.e", "u-n-d-e-r-a-g-e": three or more single letters split by separators
 SPACED = re.compile(r"\b(?:[a-z][\s._\-*/]+){2,}[a-z]\b")
 
+# "16-year-old", "16 years old", "16yo", "16 y/o", "aged 15", "age of 14". The number is checked
+# against 18 in code, so "18-year-old" and "25 yo" pass. A bare "5 years" is deliberately not
+# matched ("married for 5 years" is not about a child).
 AGE_NUM = re.compile(
     r"\b(\d{1,2})\s*[-\s]?\s*(?:years?[-\s]*olds?|yrs?[-\s]*olds?|y\s*/\s*o\b|yo\b)"
     r"|\bage[ds]?\s*(?:of\s*)?(\d{1,2})\b"
 )
+# "sixteen year old", "fifteen-yo": every number word in NUMBER_WORDS is under 18.
 AGE_WORD = re.compile(
     r"\b(" + "|".join(NUMBER_WORDS) + r")\s*[-\s]?\s*(?:years?[-\s]*olds?|yrs?|yo\b|y/o)"
 )
 
+# Building blocks for co-occurrence rules: an animal or family word alone is fine
+# ("a woman walking her dog"); together with a sexual word it is refused.
 SEXUAL = r"(?:sex|sexual|sexy|fuck\w*|nude|naked|porn\w*|penetrat\w*|oral|blowjob|intercourse|mating|erotic\w*|aroused|orgasm\w*|explicit|lewd|horny)"
 ANIMAL = r"(?:dog|dogs|horse|horses|animal|animals|pony|goat|sheep|pig|donkey|beast|canine|equine)"
 FAMILY = r"(?:sister|brother|mother|mom|mum|father|dad|daughter|son|aunt|uncle|niece|nephew|cousin|sibling|siblings)"
 
+# Category -> patterns, matched on the normalised text. \b word boundaries keep "teen" from
+# matching inside "nineteen" and "rape" from matching inside "grape".
+# The first five categories mirror the provider labels; incest and trafficking are
+# prompt-only refusals required by the brief.
 RULES: dict[str, list[str]] = {
     "minor": [
         r"\bunder\s*age\w*", r"\bminors?\b", r"\bchild\w*", r"\bkids?\b", r"\btoddlers?\b",
@@ -74,6 +97,7 @@ RULES: dict[str, list[str]] = {
         r"\benslav\w*", r"\bcaptive\b",
     ],
 }
+# Compile once at import, not per request.
 COMPILED = {k: [re.compile(p) for p in v] for k, v in RULES.items()}
 # Unambiguous terms matched inside text with every separator removed ("u n d e r a g e")
 COMPACT_TERMS = {
@@ -88,10 +112,13 @@ COMPACT_TERMS = {
 
 def normalise(text: str) -> tuple[str, str]:
     """Return (text with digits kept, text with leetspeak mapped). Both lowercase."""
+    # NFKC folds compatibility forms: full-width "ｒａｐｅ" and ligatures become plain letters.
     t = unicodedata.normalize("NFKC", text)
     t = ZERO_WIDTH.sub("", t).lower().translate(HOMOGLYPHS)
+    # Strip accents: "rápe" -> "rape" (decompose, then drop the combining marks).
     t = "".join(c for c in unicodedata.normalize("NFKD", t) if not unicodedata.combining(c))
     leet = t.translate(LEET)
+    # Rejoin words spelled out letter by letter: "r a p e" -> "rape".
     leet = SPACED.sub(lambda m: re.sub(r"[^a-z]", "", m.group(0)), leet)
     return t, leet
 
@@ -99,9 +126,11 @@ def normalise(text: str) -> tuple[str, str]:
 def check_prompt(prompt: str) -> list[str]:
     """Return refusal reasons; an empty list means the prompt may be generated."""
     digits, text = normalise(prompt)
+    # Every non-letter removed: catches "u-n-d-e-r a-g-e" style splitting the SPACED rule misses.
     compact = re.sub(r"[^a-z]", "", text)
-    found: dict[str, str] = {}
+    found: dict[str, str] = {}  # category -> the text that matched (shown to the user as the reason)
 
+    # Ages are read from the digit-preserving text: leetspeak mapping would turn "16" into "ib".
     for m in AGE_NUM.finditer(digits):
         age = int(m.group(1) or m.group(2))
         if age < 18:
@@ -109,6 +138,8 @@ def check_prompt(prompt: str) -> list[str]:
     for m in AGE_WORD.finditer(text):
         found.setdefault("minor", m.group(0).strip())
 
+    # One reason per category is enough to refuse; we still check every category so the
+    # 422 response (and the log) says everything that was wrong with the prompt.
     for category, patterns in COMPILED.items():
         for p in patterns:
             m = p.search(text)

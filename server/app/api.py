@@ -1,3 +1,15 @@
+"""HTTP API (FastAPI). The routes and response shapes the brief says will be tested,
+plus a few extras for following jobs (/media list, /events, /health, /metrics).
+
+What it does NOT do: call the moderation provider. POST /media only stores the media
+and queues a job; workers do the screening. That keeps uploads fast and means a slow
+or dead provider can never block, time out or (as in the incident) publish an upload.
+
+Most endpoints are plain `def`: FastAPI runs them in a thread pool, which suits the
+synchronous psycopg driver. Only the callback is `async`, because it must read the
+raw request body to verify the signature.
+"""
+
 import json
 from contextlib import asynccontextmanager
 from typing import Literal
@@ -18,6 +30,7 @@ from .signing import verify
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    """Runs once per API process: connect, create schema + seed, then serve; close the pool on shutdown."""
     db.open_pool()
     db.init_db()
     log("api_started", handler=config.HANDLER)
@@ -29,13 +42,16 @@ app = FastAPI(title="Moderation service", lifespan=lifespan)
 
 
 class MediaIn(BaseModel):
+    """The media JSON document from the brief. Pydantic rejects anything else with 422."""
     type: Literal["image", "video"]
     source: Literal["upload", "generation"] = "upload"
     prompt: str | None = None
+    # Each frame maps label -> score. Max 4 hours of video at 1 frame per second.
     frames: list[dict[str, float]] = Field(min_length=1, max_length=4 * 3600)
 
     @model_validator(mode="after")
     def _shape(self):
+        """Cross-field checks that a type annotation can't express."""
         if self.type == "image" and len(self.frames) != 1:
             raise ValueError("an image has exactly one frame")
         if self.source == "generation" and not (self.prompt and self.prompt.strip()):
@@ -54,6 +70,11 @@ class Caller(BaseModel):
 
 
 def caller(x_user_id: str | None = Header(None), x_workspace_id: str | None = Header(None)) -> Caller:
+    """Who is calling? FastAPI dependency used by every user-facing route.
+
+    No login (per the brief): identity comes from X-User-Id / X-Workspace-Id. We still
+    check the pair exists, so nobody can claim to be in a workspace they aren't in.
+    """
     if not x_user_id or not x_workspace_id:
         raise HTTPException(401, "X-User-Id and X-Workspace-Id headers are required")
     with db.pool.connection() as conn:
@@ -65,12 +86,15 @@ def caller(x_user_id: str | None = Header(None), x_workspace_id: str | None = He
 
 
 def admin(c: Caller = Depends(caller)) -> Caller:
+    """Rule 6: only workspace admins can see the review queue or approve/reject."""
     if c.role != "admin":
         raise HTTPException(403, "only workspace admins can review media")
     return c
 
 
 def _public(m: dict) -> dict:
+    """What clients see of a media row. Always includes id/status/reasons (the tested shape).
+    `screened` is true only when a complete provider result was applied."""
     return {
         "id": str(m["id"]), "status": m["status"], "reasons": m["reasons"],
         "workspace_id": m["workspace_id"], "type": m["type"], "source": m["source"],
@@ -82,6 +106,9 @@ def _public(m: dict) -> dict:
 
 @app.post("/media", status_code=202)
 def post_media(item: MediaIn, c: Caller = Depends(caller)):
+    """Upload or generate media. Returns 202 + pending; screening happens in the worker."""
+    # Rule 4: refuse prohibited prompts BEFORE anything is stored, generated or scored.
+    # A refused prompt creates no media and no job, so nothing downstream can ever see it.
     if item.source == "generation" and config.HANDLER != "broken":  # INCIDENT 3 when broken
         reasons = check_prompt(item.prompt or "")
         if reasons:
@@ -93,12 +120,15 @@ def post_media(item: MediaIn, c: Caller = Depends(caller)):
 
 
 def _get_own(conn, media_id: str, c: Caller, lock: bool = False) -> dict:
+    """Load media only if it belongs to the caller's workspace (rule 1). `lock` = FOR UPDATE,
+    used by approve/reject so a provider result can't land halfway through a human decision."""
     try:
         row = conn.execute(
             "SELECT * FROM media WHERE id = %s::uuid AND workspace_id = %s" + (" FOR UPDATE" if lock else ""),
             (media_id, c.workspace_id),
         ).fetchone()
     except Exception:
+        # Not a valid UUID: Postgres rejects the cast. Treat it like any unknown id.
         conn.rollback()
         row = None
     if not row:
@@ -109,6 +139,7 @@ def _get_own(conn, media_id: str, c: Caller, lock: bool = False) -> dict:
 
 @app.get("/media")
 def list_media(limit: int = 50, c: Caller = Depends(caller)):
+    """Newest media of the caller's workspace (used by the UI)."""
     with db.pool.connection() as conn:
         rows = conn.execute("SELECT * FROM media WHERE workspace_id = %s ORDER BY created_at DESC LIMIT %s",
                             (c.workspace_id, min(limit, 200))).fetchall()
@@ -123,8 +154,9 @@ def get_media(media_id: str, c: Caller = Depends(caller)):
 
 @app.get("/media/{media_id}/events")
 def media_events(media_id: str, c: Caller = Depends(caller)):
+    """The full job log for one item: every call, answer, retry, park and decision, in order."""
     with db.pool.connection() as conn:
-        _get_own(conn, media_id, c)
+        _get_own(conn, media_id, c)  # same workspace check as GET /media/{id}
         rows = conn.execute("SELECT ts, event, job_id, attempt, data FROM events WHERE media_id = %s ORDER BY id",
                             (media_id,)).fetchall()
     return [{**r, "ts": r["ts"].isoformat(), "job_id": str(r["job_id"]) if r["job_id"] else None} for r in rows]
@@ -132,6 +164,8 @@ def media_events(media_id: str, c: Caller = Depends(caller)):
 
 @app.get("/review")
 def review_queue(c: Caller = Depends(admin)):
+    """All held media of the admin's workspace: held for review AND held because the provider
+    was down. Including the second kind fixes "Nothing to review" while items were waiting."""
     with db.pool.connection() as conn:
         rows = conn.execute(
             "SELECT * FROM media WHERE workspace_id = %s AND status = 'held' ORDER BY created_at",
@@ -142,6 +176,7 @@ def review_queue(c: Caller = Depends(admin)):
 
 @app.post("/review/{media_id}/approve")
 def approve(media_id: str, c: Caller = Depends(admin)):
+    """Admin publishes held media."""
     with db.pool.connection() as conn:
         m = _get_own(conn, media_id, c, lock=True)
         if m["status"] != "held":
@@ -149,6 +184,7 @@ def approve(media_id: str, c: Caller = Depends(admin)):
         if m["screened_at"] is None:
             # Rule 5: a human cannot see a JSON document; approving unscreened media would publish it unchecked.
             raise HTTPException(409, "media has not been screened yet; it will be re-screened automatically")
+        # decided_by marks it as a human decision: later provider answers are ignored (apply_result).
         conn.execute(
             "UPDATE media SET status = 'published', hold_kind = NULL, decided_by = %s, updated_at = now() WHERE id = %s",
             (c.user_id, m["id"]),
@@ -159,10 +195,12 @@ def approve(media_id: str, c: Caller = Depends(admin)):
 
 @app.post("/review/{media_id}/reject")
 def reject(media_id: str, c: Caller = Depends(admin)):
+    """Admin blocks held media. Allowed even when unscreened: taking something down is always safe."""
     with db.pool.connection() as conn:
         m = _get_own(conn, media_id, c, lock=True)
         if m["status"] != "held":
             raise HTTPException(409, f"media is {m['status']}, not held")
+        # `reasons || %s` appends to the JSON array, keeping the provider's reasons for the audit trail.
         conn.execute(
             """UPDATE media SET status = 'blocked', hold_kind = NULL, decided_by = %s,
                       reasons = reasons || %s, updated_at = now() WHERE id = %s""",
@@ -177,6 +215,8 @@ def reject(media_id: str, c: Caller = Depends(admin)):
 
 @app.post("/provider/callback")
 async def provider_callback(request: Request, x_signature: str | None = Header(None)):
+    """Results for long videos (> 30 frames), posted by the provider some time after its 202."""
+    # Rule 7: verify the signature over the exact raw bytes, before parsing anything.
     body = await request.body()
     if not verify(body, x_signature, config.WEBHOOK_SECRET):
         log("callback_rejected_bad_signature", level="warning", has_signature=bool(x_signature), size=len(body))
@@ -190,20 +230,24 @@ async def provider_callback(request: Request, x_signature: str | None = Header(N
     def _apply():
         with db.pool.connection() as conn:
             try:
+                # The same idempotent path as sync answers: a duplicate or late callback is a no-op.
                 return apply_result(conn, media_id, frames, request_id=data.get("request_id"), via="callback")
             except MalformedResult:
                 # the stored event rolls back with the transaction; the job's callback deadline will resend
                 return "malformed"
 
+    # Database work is synchronous: run it in a thread so the async event loop isn't blocked.
     try:
         outcome = await run_in_threadpool(_apply)
     except Exception as e:
         log("callback_error", level="error", media_id=media_id, error=f"{type(e).__name__}: {e}")
+        # 500 makes a real webhook sender retry later, which is what we want for a transient DB error.
         raise HTTPException(500, "could not apply result")
     if outcome == "unknown_media":
         raise HTTPException(404, "unknown media")
     if outcome == "malformed":
         raise HTTPException(422, "malformed result")
+    # A valid new result proves the provider works: close the breaker, trigger re-screening.
     if outcome != "duplicate":
         breaker.record_success()
     return {"ok": True, "outcome": outcome}
@@ -211,6 +255,7 @@ async def provider_callback(request: Request, x_signature: str | None = Header(N
 
 @app.get("/health")
 def health():
+    """Liveness for Docker's health check; also shows which handler runs and the breaker state."""
     with db.pool.connection() as conn:
         conn.execute("SELECT 1")
     return {"ok": True, "handler": config.HANDLER, "breaker": breaker.state()}
@@ -219,8 +264,14 @@ def health():
 @app.get("/metrics")
 def metrics(since: float = 0):
     """The three numbers the brief asks for, computed from data rather than job status:
-    a 'done' job proves nothing about whether the media was screened."""
+    a 'done' job proves nothing about whether the media was screened.
+
+    `since` (unix time) limits the counts to media created after it, so the workload
+    script can measure only its own run.
+    """
     with db.pool.connection() as conn:
+        # published_unchecked: published, but no stored result, or a result covering fewer
+        # frames than the media has. This is independent of anything the handler claims.
         row = conn.execute(
             """SELECT
                  count(*) FILTER (WHERE m.status = 'published' AND (r.media_id IS NULL OR r.frames_scored < m.frame_count))
@@ -235,6 +286,7 @@ def metrics(since: float = 0):
                WHERE m.created_at >= to_timestamp(%s)""",
             (since,),
         ).fetchone()
+        # Age of the oldest job not finished yet (parked jobs count: they are still waiting).
         oldest = conn.execute(
             """SELECT extract(epoch FROM now() - min(created_at)) AS s FROM jobs
                WHERE status IN ('queued', 'running', 'waiting_callback', 'parked') AND created_at >= to_timestamp(%s)""",

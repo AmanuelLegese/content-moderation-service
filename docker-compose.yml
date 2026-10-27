@@ -1,20 +1,30 @@
 # docker compose up --build          -> fixed handler
 # HANDLER=broken docker compose up   -> reproduces the incident
+#   (export HANDLER for every compose command, or `compose run` recreates the api as fixed)
+#
+# Services: postgres + redis (state), provider (fake moderation API), api, worker x2, ui.
+# Everything the brief needs starts with one `docker compose up`.
+
+# Shared settings for the api and worker containers (YAML anchor, merged in with `<<: *app`).
 x-app: &app
-  build: ./server
-  restart: unless-stopped
+  build: ./server   # api, worker, provider and tests all use the same Python image
+  restart: unless-stopped   # also what brings a worker back after the crash test kills it
   environment: &env
     DATABASE_URL: postgresql://mod:mod@postgres:5432/mod
     REDIS_URL: redis://redis:6379/0
     PROVIDER_URL: http://provider:8001
+    # The provider posts long-video results here; "api" is the service name on the compose network.
     CALLBACK_URL: http://api:8000/provider/callback
     PROVIDER_WEBHOOK_SECRET: ${PROVIDER_WEBHOOK_SECRET:-dev-secret-change-me}
     HANDLER: ${HANDLER:-fixed}
+    # Shorter than the code defaults so outages and recovery are quick to observe and test.
     PROVIDER_TIMEOUT_S: ${PROVIDER_TIMEOUT_S:-5}
     BREAKER_COOLDOWN_S: ${BREAKER_COOLDOWN_S:-5}
     CALLBACK_DEADLINE_S: ${CALLBACK_DEADLINE_S:-60}
     WORKER_CONCURRENCY: ${WORKER_CONCURRENCY:-8}
+    # Enables the crash-test hook (worker._maybe_crash). Local/dev only; off in production.
     ALLOW_FAULTS: "1"
+  # Don't start until the databases accept connections.
   depends_on:
     postgres: { condition: service_healthy }
     redis: { condition: service_healthy }
@@ -23,7 +33,7 @@ services:
   postgres:
     image: postgres:16-alpine
     environment: { POSTGRES_USER: mod, POSTGRES_PASSWORD: mod, POSTGRES_DB: mod }
-    ports: ["5432:5432"]
+    ports: ["5432:5432"]   # exposed for inspecting data with psql; not needed by the app
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U mod"]
       interval: 2s
@@ -31,12 +41,14 @@ services:
 
   redis:
     image: redis:7-alpine
-    ports: ["6379:6379"]
+    ports: ["6379:6379"]   # exposed so the crash test / scripts on the host can set fault keys
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 2s
       retries: 30
 
+  # The fake moderation provider, its own service as the brief requires (port 8001).
+  # One uvicorn process: its call counters live in memory.
   provider:
     build: ./server
     restart: unless-stopped
@@ -45,30 +57,37 @@ services:
       PROVIDER_WEBHOOK_SECRET: ${PROVIDER_WEBHOOK_SECRET:-dev-secret-change-me}
     ports: ["8001:8001"]
 
+  # The API (port 8000). Two processes; any state they share lives in Postgres/Redis.
   api:
     <<: *app
     command: uvicorn app.api:app --host 0.0.0.0 --port 8000 --workers 2
     ports: ["8000:8000"]
+    # "Healthy" = /health answers, which needs the database. Tests and the UI wait for this.
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
       interval: 3s
       retries: 30
 
+  # Screening workers. Two replicas so redelivery, leases and the shared breaker are exercised
+  # across processes, not just threads.
   worker:
     <<: *app
     command: python -m app.worker
     deploy:
       replicas: 2
 
+  # The review page (port 3000): built React app served by nginx, which proxies /api to the api.
   ui:
     build:
       context: ./ui
+      # Built into the bundle so the UI's broken behaviour switches together with the backend's.
       args: { VITE_HANDLER: "${HANDLER:-fixed}" }
     restart: unless-stopped
     ports: ["3000:80"]
     depends_on: [api]
 
   # docker compose run --rm tests            (needs the stack running)
+  # Only started on demand (profile "test"); talks to the stack over the compose network.
   tests:
     build: ./server
     profiles: ["test"]
